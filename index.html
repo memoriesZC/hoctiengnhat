@@ -315,6 +315,9 @@
                 Câu tiếp theo →
             </button>
         </div>
+        <div id="vocab-tap-hint" class="hidden text-center text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl py-2 px-3 mt-3 animate-pulse">
+            👆 Chạm vào bất kỳ đâu trên màn hình để qua câu tiếp theo
+        </div>
     </section>
 
     <!-- ==================== VIEW 5: CHỌN BÀI NGỮ PHÁP & ĐỀ TEST ==================== -->
@@ -463,6 +466,9 @@
         <div id="grammar-explanation-box" class="hidden rounded-2xl p-4 border mb-4 animate-pop">
             <div id="grammar-exp-title" class="font-bold text-sm mb-1"></div>
             <div id="grammar-exp-text" class="text-sm leading-relaxed font-jp"></div>
+            <div class="mt-2.5 pt-2 border-t border-current/10 text-xs font-bold opacity-80 flex items-center gap-1.5">
+                <span>👆</span> Chạm vào bất kỳ đâu trên màn hình để qua câu tiếp theo
+            </div>
         </div>
 
         <div class="flex justify-end">
@@ -1542,7 +1548,8 @@
             direction: 'jp-vi',
             inputMode: 'quiz',
             flipped: false,
-            answered: false
+            answered: false,
+            justAnsweredAt: 0
         };
 
         function openVocabLessons() {
@@ -1659,6 +1666,7 @@
             if (!word) return;
 
             vocabState.answered = false;
+            document.getElementById('vocab-tap-hint')?.classList.add('hidden');
             document.getElementById('vocab-card-number').textContent = vocabState.index + 1;
             document.getElementById('vocab-progress-text').textContent = `${vocabState.index + 1} / ${vocabState.queue.length}`;
             document.getElementById('vocab-illustration').innerHTML = getVocabIllustrationSVG(word.icon);
@@ -1698,6 +1706,8 @@
         function handleVocabQuizChoice(btn, chosen, correct) {
             if (vocabState.answered) return;
             vocabState.answered = true;
+            vocabState.justAnsweredAt = Date.now();
+            document.getElementById('vocab-tap-hint')?.classList.remove('hidden');
             const fb = document.getElementById('vocab-feedback-msg');
 
             if (chosen === correct) {
@@ -1738,6 +1748,8 @@
             if (!val) return;
 
             vocabState.answered = true;
+            vocabState.justAnsweredAt = Date.now();
+            document.getElementById('vocab-tap-hint')?.classList.remove('hidden');
             const validViParts = word.vi.split(/[,\/\(]/).map(s => normalizeText(s)).filter(Boolean);
             const validJp = normalizeText(word.jp);
             const isMatch = val === validJp || validViParts.some(p => p === val || (val.length >= 2 && p.includes(val)));
@@ -2632,6 +2644,7 @@
             currentIndex: 0,
             score: 0,
             answered: false,
+            justAnsweredAt: 0,
             selectedOrder: [],
             particleSlots: [],
             activeParticleSlot: 0,
@@ -3009,6 +3022,7 @@
                 return;
             }
             grammarState.answered = true;
+            grammarState.justAnsweredAt = Date.now();
             const ex = grammarState.queue[grammarState.currentIndex];
             const isCorrect = grammarState.particleSlots.every((val, i) => val === grammarState.expectedParticles[i]);
 
@@ -3031,6 +3045,7 @@
         function checkGrammarChoice(btn, chosen) {
             if (grammarState.answered) return;
             grammarState.answered = true;
+            grammarState.justAnsweredAt = Date.now();
 
             const ex = grammarState.queue[grammarState.currentIndex];
             const isCorrect = chosen === ex.answer;
@@ -3108,6 +3123,7 @@
                 return;
             }
             grammarState.answered = true;
+            grammarState.justAnsweredAt = Date.now();
             const userSentence = grammarState.selectedOrder.map(i => i.w).join('');
             const correctSentence = ex.words.join('');
             const isCorrect = userSentence === correctSentence;
@@ -3239,6 +3255,36 @@
                 }).join('');
             }
         }
+        /* =====================================================================
+           10. CHẠM BẤT KỲ ĐÂU ĐỂ QUA CÂU TIẾP THEO (SAU KHI ĐÃ TRẢ LỜI)
+           ===================================================================== */
+        document.addEventListener('click', (e) => {
+            // Bỏ qua nếu đang mở bất kỳ modal nào
+            const modals = ['chart-modal', 'vocab-list-modal', 'grammar-summary-modal'];
+            if (modals.some(id => !document.getElementById(id)?.classList.contains('hidden'))) return;
+
+            // Bỏ qua nếu người dùng đang bôi đen chữ
+            const selection = window.getSelection();
+            if (selection && selection.toString().length > 0) return;
+
+            // 1. Chế độ Ngữ Pháp
+            const grammarView = document.getElementById('grammar-practice-view');
+            if (grammarView && !grammarView.classList.contains('hidden') && grammarState.answered) {
+                if (Date.now() - (grammarState.justAnsweredAt || 0) < 280) return;
+                // Tránh trùng lặp với nút nextGrammarQuestion và các nút điều hướng/nghe loa/modal
+                if (e.target.closest('#grammar-next-btn, header button, button[onclick*="speakCurrentGrammar"]')) return;
+                nextGrammarQuestion();
+                return;
+            }
+
+            // 2. Chế độ Từ Vựng
+            const vocabView = document.getElementById('vocab-practice-view');
+            if (vocabView && !vocabView.classList.contains('hidden') && vocabState.answered) {
+                if (Date.now() - (vocabState.justAnsweredAt || 0) < 280) return;
+                if (e.target.closest('button[onclick*="nextVocabQuestion"], header button, button[onclick*="speakCurrentVocab"], button[onclick*="flipVocabCard"], #vocab-type-input')) return;
+                nextVocabQuestion();
+            }
+        });
     </script>
 </body>
 </html>
