@@ -253,6 +253,9 @@
             </button>
             <div class="flex items-center gap-2">
                 <span id="vocab-lesson-badge" class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-bold">Bài 1</span>
+                <button id="vocab-img-toggle-btn" onclick="toggleVocabImage()" class="px-3 py-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold cursor-pointer">
+                    🖼️ Ảnh BẬT
+                </button>
                 <button onclick="toggleFurigana()" class="furigana-toggle-btn px-3 py-2 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold cursor-pointer">
                     ふりがな BẬT
                 </button>
@@ -317,6 +320,50 @@
         </div>
         <div id="vocab-tap-hint" class="hidden text-center text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl py-2 px-3 mt-3 animate-pulse">
             👆 Chạm vào bất kỳ đâu trên màn hình để qua câu tiếp theo
+        </div>
+    </section>
+
+    <!-- ==================== VIEW 4B: KẾT QUẢ HOÀN THÀNH TỪ VỰNG ==================== -->
+    <section id="vocab-result-view" class="hidden flex-1 flex flex-col px-4 py-6 max-w-3xl w-full mx-auto">
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-lg p-6 sm:p-8 text-center animate-pop mb-5">
+            <div id="vocab-result-icon" class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 text-3xl flex items-center justify-center mx-auto mb-3">🏆</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-1">Hoàn thành bài từ vựng!</h2>
+            <p id="vocab-result-subtitle" class="text-sm text-slate-500 mb-6">Bài 1</p>
+
+            <div class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-6">
+                <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200">
+                    <div class="text-xs font-bold text-emerald-700 mb-0.5">Trả lời đúng</div>
+                    <div id="vocab-res-correct" class="text-xl sm:text-2xl font-black text-emerald-600">0 / 45</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200">
+                    <div class="text-xs font-bold text-amber-700 mb-0.5">Số câu sai</div>
+                    <div id="vocab-res-wrong" class="text-xl sm:text-2xl font-black text-amber-600">0</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200">
+                    <div class="text-xs font-bold text-indigo-700 mb-0.5">Chính xác</div>
+                    <div id="vocab-res-percent" class="text-xl sm:text-2xl font-black text-indigo-600">0%</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button id="vocab-retry-wrong-btn" onclick="retryWrongVocab()" class="hidden w-full sm:w-auto px-5 py-3 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm shadow-md cursor-pointer">
+                    🔁 Ôn lại các từ sai
+                </button>
+                <button onclick="startVocabPractice(vocabState.lessonId, true)" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md cursor-pointer">
+                    🔀 Học lại (trộn ngẫu nhiên)
+                </button>
+                <button onclick="startVocabPractice(vocabState.lessonId, false)" class="w-full sm:w-auto px-5 py-3 rounded-2xl bg-white border-2 border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-sm cursor-pointer">
+                    ↺ Học lại từ đầu
+                </button>
+                <button onclick="openVocabLessons()" class="w-full sm:w-auto px-5 py-3 rounded-2xl bg-white border-2 border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-sm cursor-pointer">
+                    ← Chọn bài khác
+                </button>
+            </div>
+        </div>
+
+        <div id="vocab-wrong-review-box" class="hidden space-y-3">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-slate-500 px-1">📝 Danh sách các từ chưa nhớ rõ:</h3>
+            <div id="vocab-wrong-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
         </div>
     </section>
 
@@ -1331,7 +1378,7 @@
         /* =====================================================================
            5. QUẢN LÝ ĐIỀU HƯỚNG, TIỆN ÍCH & PHÁT ÂM TỰ NHIÊN
            ===================================================================== */
-        const views = ['home-view', 'kana-view', 'vocab-lessons-view', 'vocab-practice-view', 'grammar-lessons-view', 'grammar-practice-view', 'grammar-result-view'];
+        const views = ['home-view', 'kana-view', 'vocab-lessons-view', 'vocab-practice-view', 'vocab-result-view', 'grammar-lessons-view', 'grammar-practice-view', 'grammar-result-view'];
 
         function showView(viewId) {
             views.forEach(id => {
@@ -1549,8 +1596,32 @@
             inputMode: 'quiz',
             flipped: false,
             answered: false,
-            justAnsweredAt: 0
+            justAnsweredAt: 0,
+            showImage: true,
+            correctCount: 0,
+            wrongWords: []
         };
+
+        function toggleVocabImage() {
+            vocabState.showImage = !vocabState.showImage;
+            const btn = document.getElementById('vocab-img-toggle-btn');
+            if (btn) {
+                btn.textContent = vocabState.showImage ? '🖼️ Ảnh BẬT' : '🖼️ Ảnh TẮT';
+                btn.className = vocabState.showImage
+                    ? 'px-3 py-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold cursor-pointer'
+                    : 'px-3 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 text-xs font-bold cursor-pointer';
+            }
+            const illEl = document.getElementById('vocab-illustration');
+            if (illEl) {
+                if (vocabState.showImage) {
+                    illEl.classList.remove('hidden');
+                    const word = vocabState.queue[vocabState.index];
+                    if (word) illEl.innerHTML = getVocabIllustrationSVG(word.icon);
+                } else {
+                    illEl.classList.add('hidden');
+                }
+            }
+        }
 
         function openVocabLessons() {
             const grid = document.getElementById('vocab-lessons-grid');
@@ -1570,19 +1641,21 @@
             showView('vocab-lessons-view');
         }
 
-        function startVocabPractice(lessonId) {
+        function startVocabPractice(lessonId, shouldShuffle = false) {
             vocabState.lessonId = lessonId;
-            const words = lessonId === 'all'
+            const rawWords = lessonId === 'all'
                 ? shuffleArray(ALL_VOCAB_WORDS)
                 : [...(VOCAB_LESSONS.find(l => l.id === lessonId)?.words || [])];
 
-            vocabState.queue = words;
+            vocabState.queue = (shouldShuffle && lessonId !== 'all') ? shuffleArray(rawWords) : rawWords;
             vocabState.index = 0;
             vocabState.flipped = false;
             vocabState.answered = false;
+            vocabState.correctCount = 0;
+            vocabState.wrongWords = [];
 
             document.getElementById('vocab-lesson-badge').textContent =
-                lessonId === 'all' ? 'Tất cả bài (476 từ)' : `Bài ${lessonId} (${words.length} từ)`;
+                lessonId === 'all' ? 'Tất cả bài (476 từ)' : `Bài ${lessonId} (${vocabState.queue.length} từ)`;
 
             showView('vocab-practice-view');
             renderCurrentVocabCard();
@@ -1654,7 +1727,7 @@
             } else {
                 contentEl.innerHTML = `
                     <div class="px-4 py-3 rounded-2xl bg-white/70 border border-slate-300 text-slate-500 text-sm font-bold animate-pop">
-                        🖼️ Nhìn hình đoán từ vựng<br>
+                        ${vocabState.showImage ? '🖼️ Nhìn hình đoán từ vựng' : '🎧 Nghe âm thanh đoán từ vựng'}<br>
                         <span class="text-xs font-normal">(Bấm "Lật thẻ" để xem đáp án)</span>
                     </div>
                 `;
@@ -1669,7 +1742,13 @@
             document.getElementById('vocab-tap-hint')?.classList.add('hidden');
             document.getElementById('vocab-card-number').textContent = vocabState.index + 1;
             document.getElementById('vocab-progress-text').textContent = `${vocabState.index + 1} / ${vocabState.queue.length}`;
-            document.getElementById('vocab-illustration').innerHTML = getVocabIllustrationSVG(word.icon);
+            const illEl = document.getElementById('vocab-illustration');
+            if (vocabState.showImage) {
+                illEl.classList.remove('hidden');
+                illEl.innerHTML = getVocabIllustrationSVG(word.icon);
+            } else {
+                illEl.classList.add('hidden');
+            }
             document.getElementById('vocab-feedback-msg').textContent = '';
 
             renderVocabCardText();
@@ -1709,8 +1788,10 @@
             vocabState.justAnsweredAt = Date.now();
             document.getElementById('vocab-tap-hint')?.classList.remove('hidden');
             const fb = document.getElementById('vocab-feedback-msg');
+            const currentWord = vocabState.queue[vocabState.index];
 
             if (chosen === correct) {
+                vocabState.correctCount++;
                 btn.classList.remove('border-slate-200');
                 btn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-900');
                 fb.textContent = '🎉 Chính xác!';
@@ -1719,6 +1800,9 @@
                 renderVocabCardText();
                 speakCurrentVocab();
             } else {
+                if (currentWord && !vocabState.wrongWords.some(w => w.jp === currentWord.jp && w.vi === currentWord.vi)) {
+                    vocabState.wrongWords.push(currentWord);
+                }
                 btn.classList.remove('border-slate-200');
                 btn.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-900');
                 fb.textContent = `❌ Chưa đúng! Đáp án: ${correct}`;
@@ -1756,9 +1840,13 @@
 
             const fb = document.getElementById('vocab-feedback-msg');
             if (isMatch) {
+                vocabState.correctCount++;
                 fb.textContent = `🎉 Chính xác! ${word.jp} = ${word.vi}`;
                 fb.className = 'text-sm font-bold text-emerald-600';
             } else {
+                if (word && !vocabState.wrongWords.some(w => w.jp === word.jp && w.vi === word.vi)) {
+                    vocabState.wrongWords.push(word);
+                }
                 fb.textContent = `❌ Đáp án đúng: ${word.jp} (${word.vi})`;
                 fb.className = 'text-sm font-bold text-rose-600';
             }
@@ -1769,13 +1857,68 @@
 
         function nextVocabQuestion() {
             if (vocabState.index + 1 >= vocabState.queue.length) {
-                showToast('🎉 Bạn đã hoàn thành toàn bộ danh sách từ! Bắt đầu lượt ôn mới.');
-                vocabState.queue = shuffleArray(vocabState.queue);
-                vocabState.index = 0;
+                showVocabResult();
             } else {
                 vocabState.index++;
+                vocabState.flipped = false;
+                renderCurrentVocabCard();
             }
+        }
+
+        function showVocabResult() {
+            const total = vocabState.queue.length;
+            const correct = vocabState.correctCount;
+            const wrong = vocabState.wrongWords.length;
+            const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+            document.getElementById('vocab-result-subtitle').textContent =
+                vocabState.lessonId === 'all' ? `Ôn tập tổng hợp (${total} từ)` : `Bài ${vocabState.lessonId} (${total} từ)`;
+            document.getElementById('vocab-res-correct').textContent = `${correct} / ${total}`;
+            document.getElementById('vocab-res-wrong').textContent = `${wrong}`;
+            document.getElementById('vocab-res-percent').textContent = `${percent}%`;
+            document.getElementById('vocab-result-icon').textContent =
+                percent >= 80 ? '🏆' : (percent >= 50 ? '👏' : '💪');
+
+            const retryWrongBtn = document.getElementById('vocab-retry-wrong-btn');
+            const wrongBox = document.getElementById('vocab-wrong-review-box');
+            const wrongListEl = document.getElementById('vocab-wrong-list');
+
+            if (wrong > 0) {
+                retryWrongBtn.classList.remove('hidden');
+                retryWrongBtn.textContent = `🔁 Ôn lại ${wrong} từ sai`;
+                wrongBox.classList.remove('hidden');
+                wrongListEl.innerHTML = vocabState.wrongWords.map(w => `
+                    <div class="bg-white rounded-2xl p-4 border border-rose-200 shadow-sm flex items-center justify-between gap-3">
+                        <div>
+                            <div class="font-jp font-bold text-slate-900 text-base">
+                                ${w.kanji ? addFurigana(w.kanji) : w.jp}
+                                ${w.kanji ? `<span class="text-xs font-normal text-slate-500 ml-1">(${w.jp})</span>` : ''}
+                            </div>
+                            <div class="text-xs text-rose-600 font-semibold mt-0.5">${w.vi}</div>
+                        </div>
+                        <button onclick="speakJapanese('${w.jp.replace(/'/g, "\\'")}')" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-emerald-50 text-slate-700 flex items-center justify-center shrink-0 cursor-pointer">
+                            🔊
+                        </button>
+                    </div>
+                `).join('');
+            } else {
+                retryWrongBtn.classList.add('hidden');
+                wrongBox.classList.add('hidden');
+            }
+
+            showView('vocab-result-view');
+        }
+
+        function retryWrongVocab() {
+            if (vocabState.wrongWords.length === 0) return;
+            vocabState.queue = shuffleArray([...vocabState.wrongWords]);
+            vocabState.index = 0;
             vocabState.flipped = false;
+            vocabState.answered = false;
+            vocabState.correctCount = 0;
+            vocabState.wrongWords = [];
+            document.getElementById('vocab-lesson-badge').textContent = `Ôn từ sai (${vocabState.queue.length} từ)`;
+            showView('vocab-practice-view');
             renderCurrentVocabCard();
         }
 
