@@ -86,7 +86,7 @@
                 Học tiếng Nhật <span class="text-rose-600">thui nè</span>
             </h1>
             <p class="text-slate-500 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Chọn chế độ luyện tập bên dưới để ghi nhớ bảng chữ cái, từ vựng minh họa trực quan và ngữ pháp đặt câu chuẩn giáo trình.
+                Chọn chế độ luyện tập bên dưới để ghi nhớ bảng chữ cái, từ vựng minh họa trực quan và ngữ pháp chuẩn slide Bài 1 – 10.
             </p>
 
             <!-- 4 Thẻ Chức Năng Chính -->
@@ -141,10 +141,10 @@
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 font-jp text-2xl font-extrabold flex items-center justify-center group-hover:scale-110 transition-transform">文法</span>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700">Sinh đề động</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700">Slide Bài 5–10</span>
                         </div>
                         <h2 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors mb-1">Ngữ Pháp & Đề Test</h2>
-                        <p class="text-xs text-slate-500 leading-relaxed">Trợ từ, chia thể, ghép câu ★, đặt câu hỏi & Furigana.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed">Trợ từ, chia tính từ/động từ, ghép câu ★ & đọc hiểu.</p>
                     </div>
                     <div class="mt-5 inline-flex items-center text-xs font-bold text-amber-600">
                         Luyện ngữ pháp <span class="ml-1.5 group-hover:translate-x-1 transition-transform">→</span>
@@ -285,10 +285,8 @@
 
         <!-- Thẻ Minh Họa Chuẩn Minna no Nihongo (Chia đôi Hình trái - Chữ phải) -->
         <div id="vocab-flashcard" class="relative bg-[#E5E7EB] rounded-3xl border-2 border-slate-300 shadow-md overflow-hidden mb-5 min-h-[240px] sm:min-h-[270px] flex flex-col sm:flex-row items-center justify-between p-5 sm:p-7 transition-all">
-            <!-- Số thứ tự góc trên trái -->
             <div id="vocab-card-number" class="absolute top-3.5 left-4 text-lg font-extrabold text-slate-700 font-mono">1</div>
 
-            <!-- Nút loa & Lật thẻ góc trên phải -->
             <div class="absolute top-3 right-3 flex items-center gap-2 z-10">
                 <button onclick="flipVocabCard()" class="px-3 py-1.5 rounded-xl bg-white/90 hover:bg-white text-slate-800 text-xs font-bold shadow-sm border border-slate-200 cursor-pointer">
                     🔄 Lật thẻ
@@ -298,17 +296,12 @@
                 </button>
             </div>
 
-            <!-- Nửa bên trái: Hình minh họa SVG -->
             <div id="vocab-illustration" class="w-40 h-40 sm:w-48 sm:h-48 flex items-center justify-center shrink-0 mt-4 sm:mt-0"></div>
-
-            <!-- Nửa bên phải: Nội dung chữ -->
             <div id="vocab-card-content" class="flex-1 flex flex-col items-center justify-center text-center px-3 py-4 w-full"></div>
         </div>
 
-        <!-- Khu vực Trắc nghiệm 4 đáp án -->
         <div id="vocab-quiz-area" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4"></div>
 
-        <!-- Khu vực Tự gõ đáp án -->
         <form id="vocab-type-area" onsubmit="handleVocabTypeSubmit(event)" class="hidden space-y-3 mb-4">
             <input id="vocab-type-input" type="text" autocomplete="off" placeholder="Nhập nghĩa tiếng Việt hoặc cách đọc Hiragana..." class="w-full px-5 py-4 rounded-2xl bg-white border-2 border-slate-200 focus:border-emerald-600 focus:outline-none text-center text-base font-bold text-slate-900 shadow-sm">
             <button type="submit" class="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-md cursor-pointer">
@@ -316,7 +309,6 @@
             </button>
         </form>
 
-        <!-- Thanh điều hướng dưới -->
         <div class="flex items-center justify-between gap-3">
             <span id="vocab-feedback-msg" class="text-sm font-bold text-slate-500"></span>
             <button onclick="nextVocabQuestion()" class="ml-auto px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm cursor-pointer">
@@ -332,13 +324,13 @@
                 ← Trang chủ
             </button>
             <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                Kết hợp động 476 từ vựng + Furigana
+                Chuẩn slide Ngữ pháp Bài 1 – 10
             </span>
         </header>
 
         <div class="mb-5">
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Ngữ Pháp & Đề Test (Bài 1 – 10)</h1>
-            <p class="text-slate-500 text-sm mt-1">Hệ thống tự động phối hợp từ vựng của từng bài để sinh câu hỏi mới mỗi lượt, không lo lặp lại.</p>
+            <p class="text-slate-500 text-sm mt-1">Luyện tập theo đúng mẫu câu & ví dụ trọng tâm trong slide bài giảng (Bài 5 – 10 đã được cập nhật đầy đủ).</p>
         </div>
 
         <!-- Bộ lọc dạng bài tập -->
@@ -347,26 +339,37 @@
             <div id="grammar-type-filters" class="flex flex-wrap gap-2">
                 <button data-gtype="all" onclick="setGrammarFilter('all')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-sm cursor-pointer">Tất cả dạng bài</button>
                 <button data-gtype="particle" onclick="setGrammarFilter('particle')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 cursor-pointer">問題Ⅰ Điền trợ từ</button>
-                <button data-gtype="conjugation" onclick="setGrammarFilter('conjugation')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 cursor-pointer">問題Ⅱ Chia từ & Vị trí</button>
+                <button data-gtype="conjugation" onclick="setGrammarFilter('conjugation')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 cursor-pointer">問題Ⅱ Chia từ & Mẫu câu</button>
                 <button data-gtype="order" onclick="setGrammarFilter('order')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 cursor-pointer">問題Ⅲ Sắp xếp câu ★</button>
                 <button data-gtype="question" onclick="setGrammarFilter('question')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 cursor-pointer">問題Ⅳ Đặt câu hỏi</button>
                 <button data-gtype="reading" onclick="setGrammarFilter('reading')" class="gfilter-btn px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 cursor-pointer">問題Ⅴ Đọc hiểu ○/×</button>
             </div>
         </div>
 
-        <!-- Nút Thi Thử Tổng Hợp -->
-        <button onclick="startGrammarGame('all')" class="w-full mb-6 text-left bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-between gap-4 cursor-pointer active:scale-[0.99]">
-            <div>
-                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-xs font-bold mb-2">
-                    ⚡ SINH ĐỀ NGẪU NHIÊN TỔNG HỢP
+        <!-- Nút Thi Thử Tổng Hợp Bài 5 - 10 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <button onclick="startGrammarGame('5-10')" class="text-left bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 text-white rounded-3xl p-5 shadow-lg hover:shadow-xl transition-all flex items-center justify-between gap-3 cursor-pointer active:scale-[0.99]">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-[11px] font-bold mb-1.5">
+                        🔥 TRỌNG TÂM SLIDE MỚI
+                    </div>
+                    <h2 class="text-lg sm:text-xl font-extrabold">Tổng hợp Bài 5 – Bài 10</h2>
+                    <p class="text-amber-100 text-xs mt-1">Ôn trọn bộ ngữ pháp từ Bài 5 đến Bài 10 (20 câu).</p>
                 </div>
-                <h2 class="text-xl sm:text-2xl font-extrabold">Tất cả các bài (Bài 1 – Bài 10)</h2>
-                <p class="text-amber-100 text-sm mt-1">Tổng hợp ngẫu nhiên 20 câu hỏi ngữ pháp từ toàn bộ 10 bài học.</p>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl shrink-0">
-                ✍️
-            </div>
-        </button>
+                <div class="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-xl shrink-0">🎯</div>
+            </button>
+
+            <button onclick="startGrammarGame('all')" class="text-left bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-3xl p-5 shadow-lg hover:shadow-xl transition-all flex items-center justify-between gap-3 cursor-pointer active:scale-[0.99]">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-[11px] font-bold mb-1.5">
+                        ⚡ TOÀN BỘ CHƯƠNG TRÌNH
+                    </div>
+                    <h2 class="text-lg sm:text-xl font-extrabold">Tất cả (Bài 1 – Bài 10)</h2>
+                    <p class="text-amber-100 text-xs mt-1">Trộn ngẫu nhiên 20 câu hỏi từ toàn bộ 10 bài học.</p>
+                </div>
+                <div class="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-xl shrink-0">✍️</div>
+            </button>
+        </div>
 
         <!-- Lưới 10 bài ngữ pháp -->
         <div id="grammar-lessons-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
@@ -397,7 +400,7 @@
         <!-- Thanh tiến độ -->
         <div class="bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-sm mb-4 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <span id="grammar-lesson-badge" class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold">Bài 1</span>
+                <span id="grammar-lesson-badge" class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold">Bài 5</span>
                 <span id="grammar-type-badge" class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">問題Ⅰ</span>
             </div>
             <div class="text-xs font-extrabold text-slate-600">
@@ -418,7 +421,7 @@
             <p id="grammar-hint-vi" class="text-xs sm:text-sm font-medium text-slate-500 mt-3"></p>
         </div>
 
-        <!-- Khu vực Trắc nghiệm (Chia từ, Đặt câu hỏi, Đọc hiểu) -->
+        <!-- Khu vực Trắc nghiệm -->
         <div id="grammar-choices-area" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4"></div>
 
         <!-- Khu vực Kéo Thả Trợ Từ (問題Ⅰ) -->
@@ -462,7 +465,6 @@
             <div id="grammar-exp-text" class="text-sm leading-relaxed font-jp"></div>
         </div>
 
-        <!-- Nút Câu tiếp theo -->
         <div class="flex justify-end">
             <button id="grammar-next-btn" onclick="nextGrammarQuestion()" class="hidden px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md cursor-pointer">
                 Câu tiếp theo →
@@ -475,9 +477,8 @@
         <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-lg p-6 sm:p-8 text-center animate-pop mb-5">
             <div id="grammar-result-icon" class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-600 text-3xl flex items-center justify-center mx-auto mb-3">🏆</div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-1">Hoàn thành bài luyện tập!</h2>
-            <p id="grammar-result-subtitle" class="text-sm text-slate-500 mb-6">Tổng hợp Bài 1 – 10</p>
+            <p id="grammar-result-subtitle" class="text-sm text-slate-500 mb-6">Tổng hợp Bài 5 – 10</p>
 
-            <!-- Thống kê điểm số -->
             <div class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-6">
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200">
                     <div class="text-xs font-bold text-emerald-700 mb-0.5">Số câu đúng</div>
@@ -493,7 +494,6 @@
                 </div>
             </div>
 
-            <!-- Các nút hành động -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button id="grammar-retry-wrong-btn" onclick="retryWrongGrammar()" class="hidden w-full sm:w-auto px-5 py-3 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm shadow-md cursor-pointer">
                     🔁 Ôn lại các câu sai
@@ -507,7 +507,6 @@
             </div>
         </div>
 
-        <!-- Danh sách các câu làm sai để xem lại -->
         <div id="grammar-wrong-review-box" class="hidden space-y-3">
             <h3 class="text-sm font-extrabold uppercase tracking-wider text-slate-500 px-1">📝 Xem lại các câu chưa đúng:</h3>
             <div id="grammar-wrong-list" class="space-y-3"></div>
@@ -784,7 +783,7 @@
             {
                 id: 5,
                 title: 'Bài 5: Di chuyển & Ngày tháng',
-                desc: 'Đi/đến/về, phương tiện giao thông & ngày mồng',
+                desc: 'Đi/đến/về (へ), phương tiện (で), người đi cùng (と)',
                 words: [
                     { jp: 'ばんせん', kanji: '―番線', vi: 'Sân ga số –', icon: 'train' },
                     { jp: 'いきます', kanji: '行きます', vi: 'Đi', icon: 'walk' },
@@ -845,7 +844,7 @@
             {
                 id: 6,
                 title: 'Bài 6: Hành động & Ẩm thực',
-                desc: 'Ăn, uống, xem, nghe, đọc, viết, mua & đồ ăn thức uống',
+                desc: 'NをV, NでV, 会います(に), なにも/だれも & rủ rê ～ませんか',
                 words: [
                     { jp: 'たべます', kanji: '食べます', vi: 'Ăn', icon: 'food' },
                     { jp: 'のみます', kanji: '飲みます', vi: 'Uống', icon: 'drink' },
@@ -905,7 +904,7 @@
             {
                 id: 7,
                 title: 'Bài 7: Tặng nhận & Dụng cụ',
-                desc: 'Cho/nhận/mượn/dạy, dụng cụ ăn uống & gia đình',
+                desc: 'Công cụ/ngôn ngữ で, nhóm động từ Cho/Nhận (に) & もう/まだ',
                 words: [
                     { jp: 'きる', kanji: '切る', vi: 'Cắt', icon: 'scissors' },
                     { jp: 'おくる', kanji: '送る', vi: 'Gửi', icon: 'mail' },
@@ -954,7 +953,7 @@
             {
                 id: 8,
                 title: 'Bài 8: Tính từ & Miêu tả',
-                desc: 'Tính từ đuôi な, tính từ đuôi い & màu sắc',
+                desc: 'Tính từ い/な (khẳng định, phủ định), どう/どんな, そして/が',
                 words: [
                     { jp: 'みにくい', kanji: '', vi: 'Xấu xí', icon: 'no' },
                     { jp: 'ハンサム[な]', kanji: '', vi: 'Đẹp trai', icon: 'star' },
@@ -1010,7 +1009,7 @@
             {
                 id: 9,
                 title: 'Bài 9: Sở thích & Năng lực',
-                desc: 'Thích, ghét, giỏi, kém, hiểu, âm nhạc & gia đình',
+                desc: 'Nが 好き/嫌い/上手/下手/分かります/あります, phó từ mức độ & から',
                 words: [
                     { jp: 'わかります', kanji: '分かります', vi: 'Hiểu, nắm được', icon: 'check' },
                     { jp: 'あります', kanji: '', vi: 'Có (sở hữu)', icon: 'box' },
@@ -1067,7 +1066,7 @@
             {
                 id: 10,
                 title: 'Bài 10: Tồn tại & Vị trí',
-                desc: 'います・あります, đồ vật trong nhà & từ chỉ vị trí',
+                desc: 'N1に N2が あります/います, N1のN2(vị trí), N1とN2のあいだ, N1やN2など',
                 words: [
                     { jp: 'います', kanji: '', vi: 'Có, ở (người và động vật)', icon: 'cat' },
                     { jp: 'あります', kanji: '', vi: 'Có (đồ vật, cây cối)', icon: 'box' },
@@ -1150,27 +1149,31 @@
             '何分': 'なんぷん', '午前': 'ごぜん', '午後': 'ごご',
             '今日': 'きょう', '明日': 'あした', '今朝': 'けさ',
             '休み': 'やすみ', '昼休み': 'ひるやすみ', '毎朝': 'まいあさ',
-            '毎晩': 'まいばん', '毎日': 'まいにち', '大変ですね': 'たいへんですね',
-            '番線': 'ばんせん', '行きます': 'いきます', '来ます': 'きます',
-            '帰ります': 'かえります', '学校': 'がっこう', '飛行機': 'ひこうき',
+            '毎晩': 'まいばん', '毎日': 'まいにち', '毎週': 'まいしゅう',
+            '月曜日': 'げつようび', '火曜日': 'かようび', '水曜日': 'すいようび',
+            '木曜日': 'もくようび', '金曜日': 'きんようび', '土曜日': 'どようび',
+            '日曜日': 'にちようび', '大変ですね': 'たいへんですね',
+            '番線': 'ばんせん', '行き': 'いき', '来ます': 'きます',
+            '来ました': 'きました', '来ません': 'きません', '来ませんでした': 'きませんでした',
+            '帰り': 'かえり', '学校': 'がっこう', '飛行機': 'ひこうき',
             '電車': 'でんしゃ', '地下鉄': 'ちかてつ', '新幹線': 'しんかんせん',
-            '自転車': 'じてんしゃ', '歩いて': 'あるいて', '友達': 'ともだち',
+            '自転車': 'じてんしゃ', '歩い': 'あるい', '友達': 'ともだち',
             '彼女': 'かのじょ', '家族': 'かぞく', '先週': 'せんしゅう',
             '今週': 'こんしゅう', '来週': 'らいしゅう', '先月': 'せんげつ',
             '今月': 'こんげつ', '来月': 'らいげつ', '去年': 'きょねん',
-            '来年': 'らいねん', '何月': 'なんがつ', '何日': 'なんにち',
+            '今年': 'ことし', '来年': 'らいねん', '何月': 'なんがつ', '何日': 'なんにち',
             '誕生日': 'たんじょうび', '普通': 'ふつう', '急行': 'きゅうこう',
-            '特急': 'とっきゅう', '次の': 'つぎの', '食べます': 'たべます',
-            '飲みます': 'のみます', '吸います': 'すいます', '見ます': 'みます',
-            '聞きます': 'ききます', '読みます': 'よみます', '書きます': 'かきます',
-            '買います': 'かいます', '撮ります': 'とります', '会います': 'あいます',
+            '特急': 'とっきゅう', '次の': 'つぎの', '食べ': 'たべ',
+            '飲み': 'のみ', '吸い': 'すい', '見': 'み',
+            '聞き': 'きき', '読み': 'よみ', '書き': 'かき',
+            '買い': 'かい', '撮り': 'とり', '会い': 'あい',
             '朝ごはん': 'あさごはん', '昼ごはん': 'ひるごはん', '晩ごはん': 'ばんごはん',
             '果物': 'くだもの', 'お茶': 'おちゃ', '紅茶': 'こうちゃ',
             '牛乳': 'ぎゅうにゅう', '映画': 'えいが', '手紙': 'てがみ',
             '写真': 'しゃしん', '宿題': 'しゅくだい', '花見': 'はなみ',
-            '時々': 'ときどき', '何ですか': 'なんですか', '切ります': 'きります',
-            '送ります': 'おくります', '貸します': 'かします', '借ります': 'かりる',
-            '教えます': 'おしえます', '習います': 'ならいます', '荷物': 'にもつ',
+            '時々': 'ときどき', '何ですか': 'なんですか', '切り': 'きり',
+            '送り': 'おくり', '貸し': 'かし', '借り': 'かり',
+            '教え': 'おしえ', '習い': 'ならい', '荷物': 'にもつ',
             'お金': 'おかね', 'お父さん': 'おとうさん', 'お母さん': 'おかあさん',
             '失礼します': 'しつれいします', '旅行': 'りょこう', 'お土産': 'おみやげ',
             '静か': 'しずか', '賑やか': 'にぎやか', '有名': 'ゆうめい',
@@ -1183,7 +1186,7 @@
             '安い': 'やすい', '低い': 'ひくい', '楽しい': 'たのしい',
             '白い': 'しろい', '黒い': 'くろい', '赤い': 'あかい',
             '青い': 'あおい', '食べ物': 'たべもの', '勉強': 'べんきょう',
-            '生活': 'せいかつ', '仕事': 'しごと', '分かります': 'わかります',
+            '生活': 'せいかつ', '仕事': 'しごと', '分かり': 'わかり',
             '好き': 'すき', '嫌い': 'きらい', '上手': 'じょうず',
             '下手': 'へた', '料理': 'りょうり', '飲み物': 'のみもの',
             '野球': 'やきゅう', '音楽': 'おんがく', '歌舞伎': 'かぶき',
@@ -1198,31 +1201,29 @@
             '後ろ': 'うしろ', '近く': 'ちかく', '段目': 'だんめ',
             '田中': 'たなか', '佐藤': 'さとう', '鈴木': 'すずき',
             '山田': 'やまだ', '木村': 'きむら', '林': 'はやし',
-            '太郎': 'たろう', '東京': 'とうきょう', '京都': 'きょうと',
-            '横浜': 'よこはま', '大使館': 'たいしかん', '実習生': 'じっしゅうせい',
-            '修理します': 'しゅうりします', '貰います': 'もらいます',
-            '私': 'わたし', '人': 'ひと', '方': 'かた', '本': 'ほん',
-            '紙': 'かみ', '花': 'はな', '手': 'て', '箸': 'はし',
-            '靴': 'くつ', '傘': 'かさ', '机': 'つくえ', '国': 'くに',
-            '家': 'いえ', '今': 'いま', '時': 'じ', '分': 'ふん',
-            '半': 'はん', '朝': 'あさ', '昼': 'ひる', '晩': 'ばん',
-            '夜': 'よる', '駅': 'えき', '船': 'ふね', '彼': 'かれ',
-            '日': 'にち', '月': 'がつ', '年': 'ねん', '週': 'しゅう',
-            '卵': 'たまご', '肉': 'にく', '魚': 'さかな', '水': 'みず',
-            '酒': 'さけ', '店': 'みせ', '庭': 'にわ', '何': 'なに',
-            '切る': 'きる', '送る': 'おくる', '貸す': 'かす', '父': 'ちち',
-            '母': 'はは', '暇': 'ひま', '桜': 'さくら', '山': 'やま',
-            '町': 'まち', '所': 'ところ', '寮': 'りょう', '歌': 'うた',
-            '絵': 'え', '字': 'じ', '夫': 'おっと', '主人': 'しゅじん',
-            '妻': 'つま', '家内': 'かない', '犬': 'いぬ', '猫': 'ねこ',
-            '木': 'き', '物': 'もの', '箱': 'はこ', '棚': 'たな',
-            '窓': 'まど', '屋': 'や', '県': 'けん', '上': 'うえ',
-            '下': 'した', '前': 'まえ', '右': 'みぎ', '左': 'ひだり',
-            '中': 'なか', '外': 'そと', '隣': 'となり', '間': 'あいだ',
-            '歳': 'さい', '階': 'かい', '円': 'えん', '百': 'ひゃく',
-            '千': 'せん', '万': 'まん', '服': 'ふく', '車': 'くるま',
-            '兄': 'あに', '姉': 'あね', '弟': 'おとうと', '妹': 'いもうと',
-            '誰': 'だれ', '母の日': 'ははのひ', '父の日': 'ちちのひ'
+            '太郎君': 'たろうくん', '太郎': 'たろう', '東京': 'とうきょう', '京都': 'きょうと',
+            '奈良': 'なら', '横浜': 'よこはま', '大使館': 'たいしかん', '実習生': 'じっしゅうせい',
+            '修理': 'しゅうり', '貰い': 'もらい', '一緒': 'いっしょ',
+            '起き': 'おき', '寝': 'ね', '働き': 'はたらき', '終わり': 'おわり',
+            '北海道': 'ほっかいどう', '大阪城': 'おおさかじょう', '洗濯機': 'せんたくき',
+            '両親': 'りょうしん', '外国語': 'がいこくご', '私': 'わたし', '人': 'ひと',
+            '方': 'かた', '本': 'ほん', '紙': 'かみ', '花': 'はな', '手': 'て',
+            '箸': 'はし', '靴': 'くつ', '傘': 'かさ', '机': 'つくえ', '国': 'くに',
+            '家': 'いえ', '今': 'いま', '時': 'じ', '分': 'ふん', '半': 'はん',
+            '朝': 'あさ', '昼': 'ひる', '晩': 'ばん', '夜': 'よる', '駅': 'えき',
+            '船': 'ふね', '彼': 'かれ', '日': 'にち', '月': 'がつ', '年': 'ねん',
+            '週': 'しゅう', '卵': 'たまご', '肉': 'にく', '魚': 'さかな', '水': 'みず',
+            '酒': 'さけ', '店': 'みせ', '庭': 'にわ', '何': 'なに', '切る': 'きる',
+            '送る': 'おくる', '貸す': 'かす', '父': 'ちち', '母': 'はは', '暇': 'ひま',
+            '桜': 'さくら', '山': 'やま', '町': 'まち', '所': 'ところ', '寮': 'りょう',
+            '歌': 'うた', '絵': 'え', '字': 'じ', '夫': 'おっと', '主人': 'しゅじん',
+            '妻': 'つま', '家内': 'かない', '犬': 'いぬ', '猫': 'ねこ', '木': 'き',
+            '物': 'もの', '箱': 'はこ', '棚': 'たな', '窓': 'まど', '屋': 'や',
+            '県': 'けん', '上': 'うえ', '下': 'した', '前': 'まえ', '右': 'みぎ',
+            '左': 'ひだり', '中': 'なか', '外': 'そと', '隣': 'となり', '間': 'あいだ',
+            '歳': 'さい', '階': 'かい', '円': 'えん', '百': 'ひゃく', '千': 'せん',
+            '万': 'まん', '服': 'ふく', '車': 'くるま', '兄': 'あに', '姉': 'あね',
+            '弟': 'おとうと', '妹': 'いもうと', '誰': 'だれ', '母の日': 'ははのひ', '父の日': 'ちちのひ'
         };
 
         const SORTED_FURIGANA_KEYS = Object.keys(FURIGANA_DICT).sort((a, b) => b.length - a.length);
@@ -1241,7 +1242,6 @@
 
         function formatPromptWithTranslation(promptText) {
             if (!promptText) return '';
-            // Tách phần dịch tiếng Việt nằm trong ngoặc đơn ở cuối câu hỏi để bật/tắt độc lập
             const match = promptText.match(/^(.*?)(\s*\([A-Za-zÀ-ỹ0-9,\.\s\?\!\/\-]+\))\s*$/);
             if (match) {
                 const jpPart = addFurigana(match[1]);
@@ -1370,14 +1370,12 @@
                 .replace(/<\/?ruby>/g, '')
                 .replace(/[～〜―－]/g, '')
                 .replace(/\[[^\]]*\]/g, '')
-                .replace(/「[^」]*」/g, '')
                 .replace(/[（\(][^）\)]*[）\)]/g, '')
                 .replace(/★/g, '')
                 .replace(/\s+/g, ' ')
                 .trim();
 
-            // Thêm ngắt nhịp tự nhiên sau trợ từ nhưng không tách nhầm です / でした / では
-            s = s.replace(/([ぁ-んァ-ン一-龯0-9])(は|が|を|に|へ|と|から|まで|の)(?![すしは、。！？\s])/g, '$1$2、');
+            s = s.replace(/([ぁ-んァ-ン一-龯0-9])(は|が|を|に|へ|と|から|まで|の|や)(?![すしは、。！？\s])/g, '$1$2、');
             s = s.replace(/([ぁ-んァ-ン一-龯0-9])で(?!(?:す|した|は|も|はありません|じゃありません|[、。！？\s]))/g, '$1で、');
             return s;
         }
@@ -1796,7 +1794,7 @@
         }
 
         /* =====================================================================
-           8. DỮ LIỆU NGỮ PHÁP TĨNH, TÓM TẮT MẪU CÂU & BỘ SINH ĐỀ ĐỘNG
+           8. DỮ LIỆU NGỮ PHÁP CHUẨN SLIDE (BÀI 1 – 10) & BỘ SINH ĐỀ ĐỘNG
            ===================================================================== */
         const GRAMMAR_SUMMARIES = {
             1: [
@@ -1821,39 +1819,114 @@
                 { pattern: 'Thời gian に Vます', meaning: 'Làm hành động vào lúc (thời điểm cụ thể)', ex: '毎朝 6時に起きます。' }
             ],
             5: [
-                { pattern: 'Địa điểm へ 行きます / 来ます / 帰ります', meaning: 'Đi / đến / về địa điểm ～', ex: '明日 京都へ行きます。' },
-                { pattern: 'Phương tiện で 行きます', meaning: 'Đi bằng phương tiện ～ (đi bộ: 歩いて)', ex: '新幹線で東京へ行きます。' },
-                { pattern: 'Người と Vます', meaning: 'Làm gì cùng với ai', ex: '友達と日本へ来ました。' }
+                { pattern: 'N (nơi chốn) へ 行きます / 来ます / 帰ります', meaning: 'Đi / đến / về N (trợ từ へ đọc là e)', ex: '北海道へ行きます。(Tôi đi Hokkaido.)' },
+                { pattern: 'どこも 行きません / 行きませんでした', meaning: 'Không đi đâu cả (nghi vấn từ + も + V phủ định)', ex: '昨日 どこも行きませんでした。' },
+                { pattern: 'N (phương tiện) で 行きます / 来ます / 帰ります', meaning: 'Đi bằng phương tiện N (riêng đi bộ dùng 歩いて)', ex: '飛行機で北海道へ行きます。/ 歩いて郵便局へ行きます。' },
+                { pattern: 'N (người) と 行きます / 来ます / 帰ります', meaning: 'Đi cùng với N (một mình dùng ひとりで)', ex: '家族と北海道へ行きます。/ ひとりで図書館へ行きます。' }
             ],
             6: [
-                { pattern: 'Danh từ を Vます', meaning: 'Làm hành động tác động lên tân ngữ', ex: '毎朝 パンを食べます。' },
-                { pattern: 'Địa điểm で Vます', meaning: 'Làm hành động tại địa điểm nào đó', ex: '図書館で本を読みます。' },
-                { pattern: 'Vませんか / Vましょう', meaning: 'Mời rủ lịch sự / Cùng làm nhé', ex: 'いっしょにお茶を飲みませんか。' }
+                { pattern: 'S は N を Vます (N に 会います)', meaning: 'Tác động lên tân ngữ N bằng を (riêng gặp ai dùng に)', ex: 'カレーを食べます。/ 友達に会います。' },
+                { pattern: 'N を します / なにを しますか', meaning: 'Chơi thể thao, tổ chức tiệc/hội nghị, làm bài tập', ex: 'テニスをします。/ パーティーをします。/ 花見をします。' },
+                { pattern: 'なにも 食べません / だれも 会いません', meaning: 'Không làm gì cả / Không gặp ai cả', ex: 'なにも食べません。(Tôi không ăn gì cả.)' },
+                { pattern: 'S は N1 (địa điểm) で N2 を Vます', meaning: 'Làm hành động N2 tại địa điểm N1', ex: 'スーパーで自転車を買いました。/ 駅で新聞を買いました。' },
+                { pattern: 'いっしょに Vませんか / Vましょう', meaning: 'Mời rủ lịch sự / Cùng làm nhé (đồng thuận)', ex: 'いっしょにビールを飲みませんか。― ええ、いいですね。飲みましょう。' }
             ],
             7: [
-                { pattern: 'Công cụ / Ngôn ngữ で Vます', meaning: 'Làm bằng công cụ / bằng thứ tiếng ～', ex: '箸でごはんを食べます。' },
-                { pattern: 'Người に あげます / 貸します / 教えます', meaning: 'Tặng / cho mượn / dạy cho ai', ex: '母に花をあげます。' },
-                { pattern: 'Người に（から） もらいます / 借ります / 習います', meaning: 'Nhận / mượn / học từ ai', ex: '先生に日本語を習います。' }
+                { pattern: 'S は N1 (công cụ / phương tiện) で N2 を V', meaning: 'Làm việc gì bằng công cụ / phương tiện nào', ex: 'はさみで紙を切ります。/ 手でおにぎりを食べます。' },
+                { pattern: 'S は ＜言語＞ で N を V / 「Từ」は ～語で なんですか', meaning: 'Làm bằng ngôn ngữ ～ / Từ này trong tiếng ～ là gì?', ex: '日本語で手紙を書きます。/ 「おはようございます」はベトナム語でなんですか。' },
+                { pattern: 'N1 は N2 に（vật）を V (nhóm Cho)', meaning: 'Tặng, gửi, cho mượn, dạy, viết thư, gọi ĐT cho N2', ex: '誕生日に母に花をあげます。/ 先生は学生に英語を教えます。' },
+                { pattern: 'N1 は N2 に（vật）を V (nhóm Nhận)', meaning: 'Nhận, mượn, học từ N2 (もらいます・借ります・習います)', ex: '誕生日に母にプレゼントをもらいました。/ 友達にお金を借りました。' },
+                { pattern: 'もう Vましたか。― はい、もう Vました / いいえ、まだです', meaning: 'Đã làm ～ chưa? ― Rồi / Vẫn chưa', ex: 'もうシャツを買いましたか。― いいえ、まだです。' }
             ],
             8: [
-                { pattern: 'N は Tính từ な (です) / Tính từ い (です)', meaning: 'Miêu tả tính chất của N', ex: '東京は賑やかな町です。' },
-                { pattern: 'Phủ định: ～じゃありません / ～くないです', meaning: 'Dạng phủ định tính từ (いい ➔ よくない)', ex: 'この部屋はあまり広くないです。' },
-                { pattern: 'どんな N ですか', meaning: 'N như thế nào?', ex: '奈良はどんな町ですか。' }
+                { pattern: 'S は い形容詞 です / くないです (いい ➔ よくない)', meaning: 'Tính từ đuôi い khẳng định & phủ định', ex: 'カレーはとてもおいしいです。/ この料理はおいしくないです。' },
+                { pattern: 'S は な形容詞 です / じゃありません', meaning: 'Tính từ đuôi な khẳng định & phủ định (lưu ý: きれい là tính từ な)', ex: 'この公園は静かです。/ この部屋はきれいじゃありません。' },
+                { pattern: 'S は どうですか / S1 は A1 です。そして、A2 です (hoặc ～が、～)', meaning: 'Hỏi cảm tưởng; nối 2 tính từ tương đồng (そして) / trái ngược (が)', ex: 'フォーはおいしいです。そして、安いです。/ おいしいですが、高いです。' },
+                { pattern: 'N1 は いA + N / なA + な + N です (どんな N ですか)', meaning: 'Tính từ bổ nghĩa cho danh từ & câu hỏi tính chất どんな', ex: 'すしはおいしい食べ物です。/ 東京は賑やかな町です。' }
             ],
             9: [
-                { pattern: 'N が あります / 分かります', meaning: 'Có (sở hữu) / Hiểu cái gì', ex: '私は漢字が分かります。' },
-                { pattern: 'N が 好きです / 嫌いです / 上手です / 下手です', meaning: 'Thích / ghét / giỏi / kém cái gì', ex: '田中さんは歌が上手です。' },
-                { pattern: 'Mệnh đề から、Mệnh đề', meaning: 'Vì ～ nên ～', ex: '時間がありませんから、タクシーで行きます。' }
+                { pattern: 'S は N が 好きです / 嫌いです / 上手です / 下手です', meaning: 'Thích, ghét, giỏi, kém cái gì (dùng trợ từ が)', ex: '私はイタリア料理が好きです。/ 絵があまり上手じゃありません。' },
+                { pattern: 'S は N が 分かります / あります', meaning: 'Hiểu / Có (sở hữu đồ vật, tiền, thời gian) dùng trợ từ が', ex: '私はお金がたくさんあります。/ 時間が全然ありません。' },
+                { pattern: 'Phó từ mức độ: よく・だいたい・たくさん・少し / あまり・全然', meaning: 'Nhóm khẳng định vs Nhóm phủ định (あまり/全然 + phủ định)', ex: '英語がだいたい分かります。/ 漢字があまり分かりません。' },
+                { pattern: 'S1 から、S2 / どうして ～ か。― ～から。', meaning: 'Vì S1 nên S2 / Hỏi nguyên nhân với どうして', ex: '時間がありませんから、テレビを見ません。' }
             ],
             10: [
-                { pattern: 'Địa điểm に Người/Động vật が います', meaning: 'Ở địa điểm có người / động vật', ex: '庭に犬がいます。' },
-                { pattern: 'Địa điểm に Đồ vật が あります', meaning: 'Ở địa điểm có đồ vật', ex: '机の上に写真があります。' },
-                { pattern: 'N1 は N2 の Vị trí に あります / います', meaning: 'N1 ở vị trí (trên/dưới/trong/giữa...) của N2', ex: '本屋は銀行とスーパーの間にあります。' }
+                { pattern: 'N1 (địa điểm) に N2 が あります / います', meaning: 'Có N2 tại N1 (あります: vật/cây; います: người/động vật)', ex: 'ロビーに佐藤さんがいます。/ 公園に男の子がいます。/ 庭に猫がいます。' },
+                { pattern: 'N2 は N1 (địa điểm) に あります / います', meaning: 'N2 có ở tại N1 (nhấn mạnh chủ ngữ N2)', ex: '本屋は駅とスーパーの間にあります。' },
+                { pattern: 'N1 の N2 (vị trí) / N1 と N2 の あいだ', meaning: 'Quan hệ vị trí (上・下・前・後ろ・中・隣・近く・間)', ex: '机の上 (trên bàn) / 机の下 (dưới bàn) / 本屋と喫茶店の間' },
+                { pattern: 'N1 や N2 や N3（など）', meaning: 'Liệt kê không hết: nào là N1, nào là N2, v.v.', ex: '箱の中に古い手紙や写真があります。/ 公園に木や池などがあります。' }
             ]
         };
 
+        // Kho câu hỏi bám sát từng ví dụ trong 5 file PDF Bài 5 - 10
         const STATIC_GRAMMAR = {
+            5: [
+                {
+                    type: 'particle',
+                    prompt: '私（　）日本（　）来ました。(Tôi đã đến Nhật Bản)',
+                    hint: 'Trợ từ chỉ phương hướng di chuyển với 来ます (đọc là e)',
+                    options: ['は / へ', 'は / を', 'が / で', 'は / と'],
+                    answer: 'は / へ',
+                    explanation: 'Theo slide Bài 5: 「私は日本へ来ました。」 Trợ từ 「へ」 (đọc là e) chỉ phương hướng di chuyển.'
+                },
+                {
+                    type: 'particle',
+                    prompt: '昨日 どこ（　）行きませんでした。(Hôm qua tôi đã không đi đâu cả)',
+                    hint: 'Nghi vấn từ + trợ từ + động từ phủ định = phủ định hoàn toàn',
+                    options: ['も', 'へ', 'に', 'を'],
+                    answer: 'も',
+                    explanation: 'Slide Bài 5: 「どこも行きませんでした。」 Khi nghi vấn từ đi với 「も」 và động từ phủ định thì mang nghĩa "không ... đâu cả".'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: '（　）郵便局へ 行きます。(Tôi đi bộ đến bưu điện)',
+                    hint: 'Riêng "đi bộ" không dùng trợ từ で',
+                    options: ['歩いて', '歩いてで', '歩きで', '歩くに'],
+                    answer: '歩いて',
+                    explanation: 'Slide Bài 5: 「歩いて郵便局へ行きます。」 Đi bộ dùng thể 「歩いて」, không thêm 「で」.'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: '（　）図書館へ 行きます。(Tôi đi thư viện một mình)',
+                    hint: 'Đi một mình không dùng trợ từ と',
+                    options: ['ひとりで', 'ひとりと', 'ひとりへ', 'ひとりを'],
+                    answer: 'ひとりで',
+                    explanation: 'Slide Bài 5: 「ひとりで図書館へ行きます。」 Khi đi một mình dùng 「ひとりで」 (không dùng と).'
+                }
+            ],
             6: [
+                {
+                    type: 'particle',
+                    prompt: '駅で 友達（　）会いました。(Tôi đã gặp bạn ở nhà ga)',
+                    hint: 'Động từ 会います (gặp ai) dùng trợ từ đặc biệt nào?',
+                    options: ['に', 'を', 'で', 'へ'],
+                    answer: 'に',
+                    explanation: 'Slide Bài 6: 「友達に会います。」 Đối tượng được gặp đi với trợ từ 「に」, không dùng 「を」.'
+                },
+                {
+                    type: 'particle',
+                    prompt: 'スーパー（　）自転車（　）買いました。(Tôi đã mua xe đạp tại siêu thị)',
+                    hint: 'Trợ từ chỉ nơi diễn ra hành động và tân ngữ trực tiếp',
+                    options: ['で / を', 'に / を', 'へ / が', 'で / に'],
+                    answer: 'で / を',
+                    explanation: 'Slide Bài 6: 「スーパーで自転車を買いました。」 「で」 chỉ địa điểm diễn ra hành động, 「を」 chỉ đối tượng tác động.'
+                },
+                {
+                    type: 'question',
+                    prompt: 'A: なにを 食べますか。― B: （　）。(Tôi không ăn gì cả)',
+                    hint: 'Phủ định hoàn toàn "không ăn gì cả"',
+                    options: ['なにも食べません', 'なにを食べません', 'どこも食べません', 'だれも食べません'],
+                    answer: 'なにも食べません',
+                    explanation: 'Slide Bài 6: 「なにも食べません。」 Nghi vấn từ 「なに」 + 「も」 + Vません = không làm gì cả.'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: 'A: いっしょに ビールを（　）。― B: ええ、いいですね。飲みましょう。',
+                    hint: 'Lời mời rủ lịch sự "Cùng uống bia nhé?"',
+                    options: ['飲みませんか', '飲みますか', '飲みましたか', '飲みませんでした'],
+                    answer: '飲みませんか',
+                    explanation: 'Slide Bài 6: 「いっしょに Vませんか」 dùng để mời rủ người khác cùng làm việc gì đó.'
+                },
                 {
                     type: 'reading',
                     passage: 'わたしはランです。NTCの社員です。毎週月曜日から金曜日まで会社で働きます。毎朝6時に起きます。それから、朝ごはんを食べます。コーヒーを飲みます。8時半に電車で会社へ行きます。昼、食堂で昼ごはんを食べます。10時に家へ帰ります。',
@@ -1866,6 +1939,38 @@
             ],
             7: [
                 {
+                    type: 'particle',
+                    prompt: 'インド人は 手（　）ごはん（　）食べます。(Người Ấn Độ ăn cơm bằng tay)',
+                    hint: 'Trợ từ chỉ công cụ/phương tiện và tân ngữ trực tiếp',
+                    options: ['で / を', 'に / を', 'と / を', 'で / が'],
+                    answer: 'で / を',
+                    explanation: 'Slide Bài 7: 「インド人は手でごはんを食べます。」 Trợ từ 「で」 đứng sau công cụ, phương tiện thực hiện hành động.'
+                },
+                {
+                    type: 'question',
+                    prompt: '「おはようございます」は ベトナム語（　）なんですか。― 「Chào buổi sáng」です。',
+                    hint: 'Hỏi từ/câu này trong tiếng Việt là gì',
+                    options: ['で', 'に', 'を', 'と'],
+                    answer: 'で',
+                    explanation: 'Slide Bài 7: 「「Từ/Câu」は＜ngôn ngữ＞でなんですか。」 Dùng trợ từ 「で」 sau tên ngôn ngữ.'
+                },
+                {
+                    type: 'particle',
+                    prompt: '誕生日に 母（　）プレゼント（　）もらいました。(Sinh nhật tôi đã nhận quà từ mẹ)',
+                    hint: 'Với nhóm động từ nhận (もらいます・借ります・習います), người cho đi với trợ từ nào?',
+                    options: ['に / を', 'を / に', 'で / を', 'へ / が'],
+                    answer: 'に / を',
+                    explanation: 'Slide Bài 7: 「誕生日に母にプレゼントをもらいました。」 N1 は N2 に (vật) を V (nhận).'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: 'A: もう シャツを 買いましたか。― B: いいえ、（　）。(Chưa, tôi vẫn chưa mua)',
+                    hint: 'Cách trả lời phủ định cho câu hỏi もう ～ましたか',
+                    options: ['まだです', 'もうです', '買いました', 'まだ買いました'],
+                    answer: 'まだです',
+                    explanation: 'Slide Bài 7: 「もうシャツを買いましたか。― いいえ、まだです。」 (Chưa, vẫn chưa).'
+                },
+                {
                     type: 'reading',
                     passage: '今朝ミラーさんは図書館へ行きました。図書館で太郎君に会いました。太郎君と一緒にビデオを見ました。ミラーさんは旅行の本を借りました。明日は母の日です。午後デパートへ行きます。母の誕生日のプレゼントを買います。今年は日本の花の本をあげます。',
                     prompt: 'ミラーさんは 図書館で 旅行の本を 買いました。（○ か × か）',
@@ -1876,6 +1981,38 @@
                 }
             ],
             8: [
+                {
+                    type: 'conjugation',
+                    prompt: 'この 部屋は（　）。(Căn phòng này không sạch sẽ)',
+                    hint: 'Lưu ý: きれい là tính từ đuôi な (ngoại lệ)',
+                    options: ['きれいじゃありません', 'きれいくないです', 'きれくないです', 'きれいなくないです'],
+                    answer: 'きれいじゃありません',
+                    explanation: 'Slide Bài 8: 「きれい」 thuộc nhóm tính từ đuôi な nên phủ định là 「きれいじゃありません」.'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: '今日は 天気が（　）。(Hôm nay thời tiết không tốt)',
+                    hint: 'Phủ định đặc biệt của tính từ いい (tốt)',
+                    options: ['よくないです', 'いくないです', 'いいくないです', 'いいじゃありません'],
+                    answer: 'よくないです',
+                    explanation: 'Slide Bài 8: 「いい」 khi chia phủ định biến đổi thành 「よくないです」 (てんきはよくないです).'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: 'A: フォーは どうですか。― B: おいしいです。（　）、安いです。(Ngon. Và lại còn rẻ nữa)',
+                    hint: 'Từ nối hai tính từ có nét tương đồng về nghĩa',
+                    options: ['そして', 'が', 'から', 'それから'],
+                    answer: 'そして',
+                    explanation: 'Slide Bài 8: 「そして」 dùng để nối 2 tính từ tương đồng về ý nghĩa (ngon + rẻ).'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: 'すしは（　）食べ物です。(Sushi là món ăn ngon)',
+                    hint: 'Tính từ đuôi い đứng trước bổ nghĩa trực tiếp cho danh từ',
+                    options: ['おいしい', 'おいしいな', 'おいしく', 'おいしいの'],
+                    answer: 'おいしい',
+                    explanation: 'Slide Bài 8: 「すしはおいしいたべものです。」 Tính từ đuôi い giữ nguyên khi đứng trước danh từ.'
+                },
                 {
                     type: 'reading',
                     passage: 'ワットさんはさくら大学の英語の先生です。毎日、赤い自動車で大学へ行きます。先生の自動車は日本の自動車です。小さいですがとてもきれいです。食堂の食べ物はおいしいです。そして、安いです。大学の仕事は忙しいですが、楽しいです。',
@@ -1888,6 +2025,38 @@
             ],
             9: [
                 {
+                    type: 'particle',
+                    prompt: '私は イタリア料理（　）好きです。(Tôi thích món Ý)',
+                    hint: 'Trợ từ đi với 好きです / 嫌いです / 上手です / 下手です',
+                    options: ['が', 'を', 'に', 'で'],
+                    answer: 'が',
+                    explanation: 'Slide Bài 9: 「私はイタリア料理が好きです。」 Các tính từ chỉ sở thích, năng lực luôn dùng trợ từ 「が」.'
+                },
+                {
+                    type: 'conjugation',
+                    prompt: '私は 漢字が（　）分かりません。(Tôi không hiểu chữ Hán lắm)',
+                    hint: 'Phó từ chỉ mức độ đi với câu phủ định',
+                    options: ['あまり', 'よく', 'だいたい', 'たくさん'],
+                    answer: 'あまり',
+                    explanation: 'Slide Bài 9: 「あまり / 全然」 đi với động từ/tính từ phủ định. 「よく / だいたい / たくさん / 少し」 đi với khẳng định.'
+                },
+                {
+                    type: 'particle',
+                    prompt: '時間が ありません（　）、テレビを 見ません。(Vì không có thời gian nên tôi không xem tivi)',
+                    hint: 'Liên từ đặt cuối mệnh đề chỉ nguyên nhân (Vì... nên...)',
+                    options: ['から', 'まで', 'が', 'そして'],
+                    answer: 'から',
+                    explanation: 'Slide Bài 9: 「時間がありませんから、テレビを見ません。」 「から」 đặt cuối vế nguyên nhân.'
+                },
+                {
+                    type: 'question',
+                    prompt: 'A: （　）魚を 食べませんか。― B: 好きじゃありませんから。(Tại sao không ăn cá? ― Vì tôi không thích)',
+                    hint: 'Nghi vấn từ dùng để hỏi nguyên nhân "Tại sao"',
+                    options: ['どうして', 'どんな', 'どこで', 'なにが'],
+                    answer: 'どうして',
+                    explanation: 'Slide Bài 9: 「どうしてさかなをたべませんか。― すきじゃありませんから。」'
+                },
+                {
                     type: 'reading',
                     passage: '山田さんはダンスが好きです。毎晩ダンスの学校へ行きます。ダンスの先生はきれいな人です。山田さんはダンスが上手ではありませんが、きれいな先生に習いますから、毎日楽しいです。先生の誕生日にコンサートのチケットをあげましたが、先生は友達と行きましたから、山田さんはとても残念です。',
                     prompt: 'どうして 山田さんは 毎日 楽しいですか。',
@@ -1899,21 +2068,45 @@
             ],
             10: [
                 {
-                    type: 'conjugation',
-                    prompt: '【Vị trí đồ vật】 机の（　）に 本が あります。(Sách nằm ở phía trên mặt bàn)',
-                    hint: 'Chọn từ chỉ vị trí tương ứng với "phía trên"',
-                    options: ['上', '下', '中', '後ろ'],
-                    answer: '上',
-                    explanation: '上 (うえ) nghĩa là "trên". 机の上に本があります (Trên bàn có quyển sách).'
+                    type: "conjugation",
+                    prompt: "公園に 男の子が（　）。(Trong công viên có một cậu bé)",
+                    hint: "Động từ tồn tại dùng cho người và động vật",
+                    options: ["います", "あります", "します", "きます"],
+                    answer: "います",
+                    explanation: "Slide Bài 10: 「公園に男の子がいます。」 Người và động vật dùng 「います」, đồ vật và cây cối dùng 「あります」."
                 },
                 {
-                    type: 'reading',
-                    passage: 'わたしのふるさとは東京です。うちの近くに駅があります。駅の前にデパートとレストランがあります。デパートの中に美術館があります。駅の後ろに大使館と学校があります。大使館と学校の間に本屋があります。',
-                    prompt: '本屋は どこに ありますか。',
-                    hint: 'Hiệu sách nằm ở vị trí nào theo đoạn văn?',
-                    options: ['大使館と学校の間にあります', 'デパートの中にあります', '駅の前にあります', 'うちの隣にあります'],
-                    answer: '大使館と学校の間にあります',
-                    explanation: 'Câu cuối đoạn văn: 「大使館と学校の間に本屋があります」(Giữa đại sứ quán và trường học có hiệu sách).'
+                    type: "particle",
+                    prompt: "箱の 中（　）古い 手紙（　）写真（　）あります。(Trong hộp có nào là thư cũ, nào là ảnh...)",
+                    hint: "Trợ từ chỉ vị trí tồn tại và liên từ liệt kê 「～や～」(nào là... nào là...)",
+                    options: ["に / や / が", "で / と / を", "に / の / が", "は / や / を"],
+                    answer: "に / や / が",
+                    explanation: "Slide Bài 10: 「箱の中に古い手紙や写真があります。」 「や」 dùng để liệt kê tiêu biểu một vài vật."
+                },
+                {
+                    type: "particle",
+                    prompt: "本屋（　）喫茶店（　）間に あります。(Ở giữa hiệu sách và quán cà phê)",
+                    hint: "Cấu trúc chỉ vị trí ở giữa 2 vật: N1 と N2 の あいだ",
+                    options: ["と / の", "の / と", "や / の", "に / の"],
+                    answer: "と / の",
+                    explanation: "Slide Bài 10: 「ほんやときっさてんのあいだ」 (N1 と N2 の あいだ)."
+                },
+                {
+                    type: "question",
+                    prompt: "A: 庭に だれが いますか。― B: （　）。(Trong vườn không có ai cả)",
+                    hint: "Phủ định hoàn toàn sự tồn tại của người",
+                    options: ["だれもいません", "だれがいません", "なにもありません", "だれもありません"],
+                    answer: "だれもいません",
+                    explanation: "Slide Bài 10: 「にわにだれがいますか。― だれもいません。」 (Không có ai cả)."
+                },
+                {
+                    type: "reading",
+                    passage: "わたしのふるさとは東京です。うちの近くに駅があります。駅の前にデパートとレストランがあります。デパートの中に美術館があります。駅の後ろに大使館と学校があります。大使館と学校の間に本屋があります。",
+                    prompt: "本屋は どこに ありますか。",
+                    hint: "Hiệu sách nằm ở vị trí nào theo đoạn văn?",
+                    options: ["大使館と学校の間にあります", "デパートの中にあります", "駅の前にあります", "うちの隣にあります"],
+                    answer: "大使館と学校の間にあります",
+                    explanation: "Câu cuối đoạn văn: 「大使館と学校の間に本屋があります」(Giữa đại sứ quán và trường học có hiệu sách)."
                 }
             ]
         };
@@ -2130,13 +2323,15 @@
                     { jp: '地下鉄', vi: 'tàu điện ngầm' },
                     { jp: '飛行機', vi: 'máy bay' },
                     { jp: '自転車', vi: 'xe đạp' },
-                    { jp: 'バス', vi: 'xe buýt' }
+                    { jp: 'バス', vi: 'xe buýt' },
+                    { jp: '電車', vi: 'tàu điện' }
                 ];
                 const dests = [
+                    { jp: '北海道', vi: 'Hokkaido' },
                     { jp: '京都', vi: 'Kyoto' },
-                    { jp: '学校', vi: 'trường học' },
                     { jp: 'スーパー', vi: 'siêu thị' },
-                    { jp: '駅', vi: 'nhà ga' }
+                    { jp: '郵便局', vi: 'bưu điện' },
+                    { jp: '図書館', vi: 'thư viện' }
                 ];
                 const vh = pickRandom(vehicles);
                 const ds = pickRandom(dests);
@@ -2148,49 +2343,49 @@
                         hint: `Hôm qua tôi đã đi đến ${ds.vi} bằng ${vh.vi} cùng với ${p1}.`,
                         options: ['と / で / へ', 'で / と / に', 'と / に / で', 'は / で / を'],
                         answer: 'と / で / へ',
-                        explanation: '「と」 chỉ người đi cùng, 「で」 chỉ phương tiện di chuyển, 「へ」 chỉ hướng/địa điểm đến.'
-                    },
-                    {
-                        type: 'conjugation',
-                        prompt: `駅から うちまで（　）帰りました。(Từ ga về nhà bằng cách đi bộ)`,
-                        hint: 'Đi bộ không dùng trợ từ で',
-                        options: ['歩いて', '歩いてで', '歩くに', '歩きで'],
-                        answer: '歩いて',
-                        explanation: 'Riêng trường hợp "đi bộ" dùng 「歩いて」 (không thêm trợ từ 「で」).'
+                        explanation: 'Slide Bài 5: 「と」 chỉ người đi cùng, 「で」 chỉ phương tiện giao thông, 「へ」 chỉ phương hướng di chuyển.'
                     },
                     {
                         type: 'question',
-                        prompt: `${p1}の 誕生日は（　）ですか。― 9月2日です。`,
-                        hint: 'Hỏi ngày sinh nhật là khi nào',
-                        options: ['いつ', 'なんじ', 'どこ', 'だれ'],
-                        answer: 'いつ',
-                        explanation: '「いつ」 dùng để hỏi thời điểm (khi nào / bao giờ) và không cần trợ từ 「に」 phía sau.'
+                        prompt: `（　）で うちへ 帰りますか。― 電車で 帰ります。`,
+                        hint: 'Hỏi về phương tiện giao thông (bằng phương tiện gì?)',
+                        options: ['なん', 'だれ', 'どこ', 'いつ'],
+                        answer: 'なん',
+                        explanation: 'Slide Bài 5: 「なんでうちへかえりますか。― でんしゃでかえります。」'
+                    },
+                    {
+                        type: 'question',
+                        prompt: `（　）と 日本へ 来ましたか。― 家族と 来ました。`,
+                        hint: 'Hỏi về người cùng di chuyển (đi với ai?)',
+                        options: ['だれ', 'なん', 'どこ', 'いつ'],
+                        answer: 'だれ',
+                        explanation: 'Slide Bài 5: 「だれとにほんへきましたか。」 (Bạn đến Nhật với ai?).'
                     },
                     {
                         type: 'order',
-                        words: ['来週', 'の', '火曜日', 'に', '友達', 'と', ds.jp, 'へ', '行きます。'],
-                        hint: `Ghép câu: Thứ Ba tuần sau tôi đi đến ${ds.vi} cùng bạn.`,
-                        explanation: 'Trật tự chuẩn: [Thời gian に] + [Người と] + [Địa điểm へ] + 行きます。'
+                        words: ['家族', 'と', vh.jp, 'で', ds.jp, 'へ', '行きます。'],
+                        hint: `Ghép câu: Tôi đi đến ${ds.vi} bằng ${vh.vi} cùng gia đình.`,
+                        explanation: 'Trật tự chuẩn Bài 5: [Người と] + [Phương tiện で] + [Địa điểm へ] + 行きます。'
                     }
                 );
             }
 
             if (lessonId === 6) {
                 const foods = [
+                    { jp: 'カレー', vi: 'cà ri' },
                     { jp: '魚', vi: 'cá' },
                     { jp: '野菜', vi: 'rau' },
-                    { jp: '果物', vi: 'trái cây' },
-                    { jp: '卵', vi: 'trứng' },
+                    { jp: 'パン', vi: 'bánh mì' },
                     { jp: '朝ごはん', vi: 'cơm sáng' }
                 ];
-                const drinks = [
-                    { jp: '紅茶', vi: 'trà đen' },
-                    { jp: '牛乳', vi: 'sữa bò' },
-                    { jp: 'ジュース', vi: 'nước ép' },
-                    { jp: 'お茶', vi: 'trà' }
+                const places = [
+                    { jp: 'スーパー', vi: 'siêu thị' },
+                    { jp: '駅', vi: 'nhà ga' },
+                    { jp: '庭', vi: 'vườn' },
+                    { jp: '大学', vi: 'trường đại học' }
                 ];
                 const fd = pickRandom(foods);
-                const dr = pickRandom(drinks);
+                const pl = pickRandom(places);
 
                 generated.push(
                     {
@@ -2199,79 +2394,72 @@
                         hint: `Mỗi sáng tôi ăn ${fd.vi} ở nhà hàng.`,
                         options: ['で / を', 'に / を', 'で / が', 'へ / を'],
                         answer: 'で / を',
-                        explanation: '「で」 chỉ nơi diễn ra hành động (レストランで), 「を」 đánh dấu tân ngữ chịu tác động (食べます).'
+                        explanation: 'Slide Bài 6: 「で」 chỉ nơi diễn ra hành động, 「を」 đánh dấu bổ ngữ trực tiếp của động từ.'
                     },
                     {
-                        type: 'particle',
-                        prompt: `昨日 駅で ${p1}（　）会いました。一緒に ${dr.jp}（　）飲みました。`,
-                        hint: `Hôm qua gặp ${p1} ở ga và cùng uống ${dr.vi}.`,
-                        options: ['に / を', 'を / に', 'と / が', 'で / を'],
-                        answer: 'に / を',
-                        explanation: 'Động từ 「会います」 (gặp ai) đi với trợ từ 「に」 (友達に会います).'
+                        type: 'question',
+                        prompt: `（　）で 写真を 撮りましたか。― 庭で 撮りました。`,
+                        hint: 'Hỏi địa điểm diễn ra hành động (chụp ảnh ở đâu?)',
+                        options: ['どこ', 'なに', 'だれ', 'いつ'],
+                        answer: 'どこ',
+                        explanation: 'Slide Bài 6: 「どこでしゃしんをとりましたか。― にわでとりました。」'
                     },
                     {
                         type: 'conjugation',
-                        prompt: `いっしょに 公園で お花見を（　）。(Cùng đi ngắm hoa anh đào ở công viên nhé?)`,
-                        hint: 'Mẫu câu rủ rê lịch sự Vませんか',
-                        options: ['しませんか', 'しました', 'しませんでした', 'しますか'],
-                        answer: 'しませんか',
-                        explanation: '「～ませんか」 là mẫu câu mời rủ người nghe cùng làm gì một cách lịch sự.'
+                        prompt: `A: いっしょに お花見を しませんか。― B: ええ、（　）。(Vâng, cùng làm nhé)`,
+                        hint: 'Đáp lại lời mời rủ một cách đồng thuận',
+                        options: ['しましょう', 'しませんでした', 'しませんか', 'しました'],
+                        answer: 'しましょう',
+                        explanation: 'Slide Bài 6: 「～ましょう」 là lời đề nghị/đồng thuận cùng làm một việc đã thỏa thuận.'
                     },
                     {
                         type: 'order',
-                        words: ['毎日', '庭', 'で', '友達', 'と', '写真', 'を', '撮ります。'],
-                        hint: 'Ghép câu: Mỗi ngày tôi chụp ảnh cùng bạn ở trong vườn.',
-                        explanation: 'Trật tự: [Thời gian] + [Nơi chốn で] + [Người と] + [Tân ngữ を] + Vます。'
+                        words: [pl.jp, 'で', '友達', 'と', '写真', 'を', '撮りました。'],
+                        hint: `Ghép câu: Tôi đã chụp ảnh cùng bạn tại ${pl.vi}.`,
+                        explanation: 'Trật tự Bài 6: [Địa điểm で] + [Người と] + [Tân ngữ を] + Vました。'
                     }
                 );
             }
 
             if (lessonId === 7) {
-                const gifts = [
-                    { jp: 'お土産', vi: 'quà lưu niệm' },
-                    { jp: '花', vi: 'hoa' },
-                    { jp: 'シャツ', vi: 'áo sơ mi' },
-                    { jp: 'プレゼント', vi: 'quà tặng' }
-                ];
                 const tools = [
-                    { jp: 'パソコン', vi: 'máy tính' },
-                    { jp: 'はさみ', vi: 'kéo' },
-                    { jp: 'スプーン', vi: 'muỗng' },
-                    { jp: '日本語', vi: 'tiếng Nhật' }
+                    { jp: 'はさみ', obj: '紙', verb: '切ります', vi: 'cắt giấy bằng kéo' },
+                    { jp: 'パソコン', obj: 'メール', verb: '送ります', vi: 'gửi email bằng máy tính' },
+                    { jp: 'ペン', obj: '手紙', verb: '書きます', vi: 'viết thư bằng bút' },
+                    { jp: '箸', obj: 'ごはん', verb: '食べます', vi: 'ăn cơm bằng đũa' }
                 ];
-                const gf = pickRandom(gifts);
-                const tl = pickRandom(tools);
+                const t1 = pickRandom(tools);
 
                 generated.push(
                     {
                         type: 'particle',
-                        prompt: `私は ${tl.jp}（　）レポート（　）書きます。`,
-                        hint: `Tôi viết báo cáo bằng ${tl.vi}.`,
+                        prompt: `私は ${t1.jp}（　）${t1.obj}（　）${t1.verb}。`,
+                        hint: `Tôi ${t1.vi}.`,
                         options: ['で / を', 'に / を', 'を / で', 'と / を'],
                         answer: 'で / を',
-                        explanation: 'Trợ từ 「で」 đứng sau phương tiện, công cụ hoặc ngôn ngữ thực hiện hành động.'
+                        explanation: 'Slide Bài 7: 「S は N1 (công cụ) で N2 を V」.'
                     },
                     {
-                        type: 'particle',
-                        prompt: `誕生日に ${p1}（　）${gf.jp}（　）もらいました。`,
-                        hint: `Vào ngày sinh nhật tôi đã nhận được ${gf.vi} từ ${p1}.`,
-                        options: ['に / を', 'を / に', 'で / を', 'へ / を'],
-                        answer: 'に / を',
-                        explanation: 'Với 「もらいます / 借ります / 習います」, người cho/dạy đi với trợ từ 「に」 (hoặc 「から」).'
+                        type: 'question',
+                        prompt: `（　）で 花を 切りますか。― はさみで 切ります。`,
+                        hint: 'Hỏi về công cụ thực hiện hành động (cắt hoa bằng gì?)',
+                        options: ['なん', 'だれ', 'どこ', 'いつ'],
+                        answer: 'なん',
+                        explanation: 'Slide Bài 7: 「なんではなをきりますか。― はさみできります。」'
                     },
                     {
-                        type: 'conjugation',
-                        prompt: `A: もう 荷物を 送りましたか。― B: いいえ、まだです。これから（　）。`,
-                        hint: 'Chưa gửi, từ bây giờ mới gửi (thì hiện tại/tương lai)',
-                        options: ['送ります', '送りました', '送りませんでした', '送っています'],
-                        answer: '送ります',
-                        explanation: 'Có 「これから」 (từ bây giờ) nên động từ chia ở dạng khẳng định 「送ります」.'
+                        type: 'question',
+                        prompt: `（　）に 英語を 教えますか。― 学生に 教えます。`,
+                        hint: 'Hỏi đối tượng tiếp nhận hành động (dạy tiếng Anh cho ai?)',
+                        options: ['だれ', 'なに', 'どこ', 'なん'],
+                        answer: 'だれ',
+                        explanation: 'Slide Bài 7: 「だれにえいごをおしえますか。― がくせいにおしえます。」'
                     },
                     {
                         type: 'order',
-                        words: ['私', 'は', p1, 'に', gf.jp, 'を', 'あげました。'],
-                        hint: `Ghép câu: Tôi đã tặng ${gf.vi} cho ${p1}.`,
-                        explanation: 'Cấu trúc: [Người tặng は] + [Người nhận に] + [Vật を] + あげます。'
+                        words: ['先生', 'は', '学生', 'に', '英語', 'を', '教えます。'],
+                        hint: 'Ghép câu: Giáo viên dạy tiếng Anh cho học sinh.',
+                        explanation: 'Slide Bài 7: N1 は N2 に (vật/kiến thức) を V (nhóm Cho).'
                     }
                 );
             }
@@ -2286,8 +2474,8 @@
                 ];
                 const iAdjs = [
                     { jp: '新しい', neg: '新しくないです', vi: 'mới' },
-                    { jp: '忙しい', neg: '忙しくないです', vi: 'bận rộn' },
-                    { jp: '難しい', neg: '難しくないです', vi: 'khó' },
+                    { jp: 'おいしい', neg: 'おいしくないです', vi: 'ngon' },
+                    { jp: '暑い', neg: '暑くないです', vi: 'nóng' },
                     { jp: '寒い', neg: '寒くないです', vi: 'lạnh' },
                     { jp: 'いい', neg: 'よくないです', vi: 'tốt' }
                 ];
@@ -2297,127 +2485,120 @@
                 generated.push(
                     {
                         type: 'conjugation',
-                        prompt: `奈良は（　）町です。(Nara là một thành phố ${na1.vi})`,
+                        prompt: `東京は（　）町です。(Tokyo là một thành phố ${na1.vi})`,
                         hint: 'Tính từ đuôi な đứng trước danh từ phải giữ な',
                         options: [`${na1.jp}な`, `${na1.jp}`, `${na1.jp}い`, `${na1.jp}の`],
                         answer: `${na1.jp}な`,
-                        explanation: `「${na1.jp}」 là tính từ đuôi な, khi bổ nghĩa trực tiếp cho danh từ (町) phải thêm 「な」.`
+                        explanation: `Slide Bài 8: 「N1 は なA な N です」. Tính từ đuôi な phải thêm 「な」 khi đứng trước danh từ.`
                     },
                     {
                         type: 'conjugation',
-                        prompt: `この 仕事は あまり（　）。(Công việc này không ${i1.vi} lắm)`,
+                        prompt: `この 料理は あまり（　）。(Món ăn này không ${i1.vi} lắm)`,
                         hint: `Chia phủ định của tính từ 「${i1.jp}」`,
                         options: [i1.neg, `${i1.jp}くないです`, `${i1.jp}じゃありません`, `${i1.jp}なです`],
                         answer: i1.neg,
-                        explanation: `Tính từ đuôi い bỏ 「い」 thêm 「くないです」 (riêng 「いい」 biến đổi thành 「よくないです」).`
+                        explanation: `Slide Bài 8: Tính từ đuôi い bỏ 「い」 thêm 「くないです」 (riêng 「いい」 ➔ 「よくないです」).`
                     },
                     {
                         type: 'question',
-                        prompt: `${p1}は（　）人ですか。― とても 親切な 人です。`,
-                        hint: `Hỏi ${p1} là người có tính cách như thế nào`,
+                        prompt: `さくらは（　）花ですか。― きれいな 花です。`,
+                        hint: 'Hỏi tính chất của danh từ (Hoa anh đào là loài hoa như thế nào?)',
                         options: ['どんな', 'どう', 'どれ', 'なん'],
                         answer: 'どんな',
-                        explanation: '「どんな + Danh từ」 dùng để hỏi tính chất, đặc điểm của người hoặc vật.'
+                        explanation: 'Slide Bài 8: 「さくらはどんなはなですか。― きれいなはなです。」'
                     },
                     {
                         type: 'order',
-                        words: ['日本', 'の', '生活', 'は', '忙しいですが、', 'とても', '楽しいです。'],
-                        hint: 'Ghép câu: Cuộc sống ở Nhật tuy bận rộn nhưng rất vui.',
-                        explanation: 'Liên từ 「が」 nối hai mệnh đề mang ý nghĩa tương phản (tuy... nhưng...).'
+                        words: ['フォー', 'は', 'おいしいですが、', '高いです。'],
+                        hint: 'Ghép câu: Phở tuy ngon nhưng đắt.',
+                        explanation: 'Slide Bài 8: 「S1 は A1 ですが、A2 です」 dùng 「が」 nối 2 tính từ trái ngược ý nghĩa.'
                     }
                 );
             }
 
             if (lessonId === 9) {
                 const hobbies = [
-                    { jp: '野球', vi: 'bóng chày' },
-                    { jp: '料理', vi: 'nấu ăn' },
-                    { jp: '音楽', vi: 'âm nhạc' },
-                    { jp: '漢字', vi: 'chữ Hán' },
-                    { jp: '歌舞伎', vi: 'kịch Kabuki' }
+                    { jp: 'イタリア料理', vi: 'món Ý' },
+                    { jp: '英語', vi: 'tiếng Anh' },
+                    { jp: 'ダンス', vi: 'khiêu vũ' },
+                    { jp: '歌', vi: 'ca hát' },
+                    { jp: 'スポーツ', vi: 'thể thao' }
                 ];
                 const hb = pickRandom(hobbies);
 
                 generated.push(
                     {
                         type: 'particle',
-                        prompt: `${p1}は ${hb.jp}（　）とても 上手です。`,
-                        hint: `${p1} rất giỏi về ${hb.vi}.`,
+                        prompt: `私は ${hb.jp}（　）とても 上手です。(Tôi rất giỏi ${hb.vi})`,
+                        hint: 'Trợ từ đi với 上手です / 下手です / 好きです / 嫌いです',
                         options: ['が', 'を', 'に', 'で'],
                         answer: 'が',
-                        explanation: 'Các tính từ chỉ sở thích, năng lực (好き・嫌い・上手・下手) luôn đi với trợ từ 「が」.'
-                    },
-                    {
-                        type: 'particle',
-                        prompt: `今日 約束（　）あります（　）、早く 帰ります。`,
-                        hint: 'Hôm nay vì có cuộc hẹn nên tôi về sớm.',
-                        options: ['が / から', 'を / から', 'に / まで', 'が / が'],
-                        answer: 'が / から',
-                        explanation: '「あります」 (có) đi với trợ từ 「が」, và 「から」 nối mệnh đề chỉ nguyên nhân (vì... nên...).'
+                        explanation: 'Slide Bài 9: 「S は N が 上手です」 dùng trợ từ 「が」 trước tính từ chỉ năng lực.'
                     },
                     {
                         type: 'question',
-                        prompt: `（　）昨日 会社を 休みまし たか。― 子どもが 病気でしたから。`,
-                        hint: 'Hỏi lý do tại sao hôm qua nghỉ làm',
-                        options: ['どうして', 'どんな', 'どこで', 'いくら'],
-                        answer: 'どうして',
-                        explanation: '「どうして」 dùng để hỏi lý do (tại sao?), câu trả lời thường kết thúc bằng 「～から」.'
+                        prompt: `（　）スポーツが 好きですか。― テニスが 好きです。`,
+                        hint: 'Hỏi chọn 1 thứ nằm trong nhóm danh từ N (Môn thể thao nào?)',
+                        options: ['どんな', 'どう', 'どうして', 'どこ'],
+                        answer: 'どんな',
+                        explanation: 'Slide Bài 9: 「どんなスポーツがすきですか。― テニスがすきです。」'
+                    },
+                    {
+                        type: 'conjugation',
+                        prompt: `フランス語が（　）分かりません。(Tôi hoàn toàn không hiểu tiếng Pháp)`,
+                        hint: 'Phó từ chỉ mức độ 0% đi với phủ định',
+                        options: ['全然', 'よく', 'だいたい', '少し'],
+                        answer: '全然',
+                        explanation: 'Slide Bài 9: 「フランスごがぜんぜんわかりません。」 「全然」 đi với câu phủ định.'
                     },
                     {
                         type: 'order',
-                        words: ['細かい', 'お金', 'が', 'ありませんから、', 'チケット', 'を', '買いません。'],
-                        hint: 'Ghép câu: Vì không có tiền lẻ nên tôi không mua vé.',
-                        explanation: 'Trật tự: [Nguyên nhân + から]、[Kết quả].'
+                        words: ['スポーツ', 'が', '好きですから、', '毎日', 'します。'],
+                        hint: 'Ghép câu: Vì thích thể thao nên tôi chơi mỗi ngày.',
+                        explanation: 'Slide Bài 9: 「スポーツがすきですから、まいにちします。」'
                     }
                 );
             }
 
             if (lessonId === 10) {
-                const living = [
-                    { jp: '男の子', vi: 'cậu bé' },
-                    { jp: '女の子', vi: 'cô bé' },
-                    { jp: '犬', vi: 'con chó' },
-                    { jp: '猫', vi: 'con mèo' }
+                const animals = [
+                    { jp: "猫", vi: "con mèo" },
+                    { jp: "犬", vi: "con chó" },
+                    { jp: "男の子", vi: "cậu bé" },
+                    { jp: "佐藤さん", vi: "chị Sato" }
                 ];
-                const things = [
-                    { jp: '冷蔵庫', vi: 'tủ lạnh' },
-                    { jp: '電池', vi: 'pin' },
-                    { jp: 'ポスト', vi: 'hòm thư' },
-                    { jp: 'ベッド', vi: 'giường' }
-                ];
-                const lv = pickRandom(living);
-                const th = pickRandom(things);
+                const an = pickRandom(animals);
 
                 generated.push(
                     {
-                        type: 'conjugation',
-                        prompt: `公園の 中に ${lv.jp}が（　）。(Trong công viên có ${lv.vi})`,
-                        hint: 'Chọn động từ tồn tại dùng cho người và động vật',
-                        options: ['います', 'あります', 'します', 'いきます'],
-                        answer: 'います',
-                        explanation: `「${lv.jp}」 là người/động vật nên phải dùng 「います」 (「あります」 chỉ dùng cho đồ vật/cây cối).`
+                        type: "particle",
+                        prompt: `ロビー（　）${an.jp}（　）います。(Có ${an.vi} ở đại sảnh)`,
+                        hint: "Cấu trúc tồn tại: N1 (địa điểm) に N2 が います",
+                        options: ["に / が", "で / を", "に / を", "は / に"],
+                        answer: "に / が",
+                        explanation: "Slide Bài 10: 「ロビーにさとうさんがいます。」 Địa điểm đi với 「に」, chủ thể tồn tại đi với 「が」."
                     },
                     {
-                        type: 'particle',
-                        prompt: `本屋は 銀行（　）スーパー（　）間に あります。`,
-                        hint: 'Hiệu sách nằm ở giữa ngân hàng và siêu thị.',
-                        options: ['と / の', 'の / と', 'に / の', 'や / に'],
-                        answer: 'と / の',
-                        explanation: 'Mẫu chỉ vị trí ở giữa hai vật: 「N1 と N2 の 間 (あいだ)」.'
+                        type: "conjugation",
+                        prompt: "公園に 木や 池などが（　）。(Trong công viên có nào là cây, nào là ao hồ...)",
+                        hint: "Động từ tồn tại dùng cho đồ vật và cây cối",
+                        options: ["あります", "います", "します", "きます"],
+                        answer: "あります",
+                        explanation: "Slide Bài 10: 「公園に木やいけなどがあります。」 Cây cối và đồ vật dùng 「あります」."
                     },
                     {
-                        type: 'particle',
-                        prompt: `箱の 中（　）${th.jp}（　）あります。`,
-                        hint: `Ở trong hộp có ${th.vi}.`,
-                        options: ['に / が', 'で / を', 'に / を', 'は / に'],
-                        answer: 'に / が',
-                        explanation: 'Mẫu câu tồn tại: 「[Địa điểm] に [Vật/Người] が あります/います」.'
+                        type: "question",
+                        prompt: "箱の 中に（　）が ありますか。― 古い 手紙や 写真が あります。",
+                        hint: "Hỏi đồ vật tồn tại trong hộp (Có cái gì?)",
+                        options: ["なに", "だれ", "どこ", "いつ"],
+                        answer: "なに",
+                        explanation: "Slide Bài 10: 「はこの中になにがありますか。」 Hỏi đồ vật dùng 「なに」, hỏi người dùng 「だれ」."
                     },
                     {
-                        type: 'order',
-                        words: ['テーブル', 'の', '下', 'に', '猫', 'が', 'います。'],
-                        hint: 'Ghép câu: Ở phía dưới bàn ăn có một con mèo.',
-                        explanation: 'Trật tự: [Vật mốc の Vị trí] + に + [Con vật が] + います。'
+                        type: "order",
+                        words: ["机", "の", "下", "に", an.jp, "が", "います。"],
+                        hint: `Ghép câu: Ở dưới bàn có ${an.vi}.`,
+                        explanation: "Slide Bài 10: 「N1 の N2 (vị trí) に N3 が います/あります。」"
                     }
                 );
             }
@@ -2503,7 +2684,10 @@
             grid.innerHTML = VOCAB_LESSONS.map(l => `
                 <button onclick="startGrammarGame(${l.id})" class="text-left bg-white rounded-3xl p-5 border-2 border-slate-200/80 hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-3 cursor-pointer active:scale-[0.99]">
                     <div>
-                        <span class="text-xs font-extrabold text-amber-600 uppercase">Bài ${l.id}</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-extrabold text-amber-600 uppercase">Bài ${l.id}</span>
+                            ${l.id >= 5 ? '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-50 text-rose-600 border border-rose-200">Slide mới</span>' : ''}
+                        </div>
                         <h3 class="text-base font-bold text-slate-900 mt-1">${l.title.replace(/^Bài \d+:\s*/, '')}</h3>
                         <p class="text-xs text-slate-500 mt-1 line-clamp-1">${l.desc}</p>
                     </div>
@@ -2531,9 +2715,14 @@
             grammarState.selectedOrder = [];
             grammarState.wrongList = [];
 
-            const targetLessons = lessonId === 'all' ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [lessonId];
-            let pool = [];
+            let targetLessons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            if (lessonId === '5-10') {
+                targetLessons = [5, 6, 7, 8, 9, 10];
+            } else if (lessonId !== 'all') {
+                targetLessons = [lessonId];
+            }
 
+            let pool = [];
             targetLessons.forEach(id => {
                 for (let round = 0; round < 3; round++) {
                     pool.push(...generateDynamicLessonExercises(id));
@@ -2547,7 +2736,6 @@
                 pool = pool.filter(item => item.type === grammarState.filterType);
             }
 
-            // Loại bỏ câu trùng nội dung và ưu tiên câu chưa làm
             const uniqueMap = new Map();
             shuffleArray(pool).forEach(item => {
                 const key = item.prompt || (item.words ? item.words.join('') : '');
@@ -2560,7 +2748,7 @@
             const unseen = uniqueList.filter(item => !seenGrammarPrompts.has(item.prompt || (item.words || []).join('')));
             const finalPool = unseen.length >= 8 ? unseen : uniqueList;
 
-            const limit = lessonId === 'all' ? 20 : 12;
+            const limit = (lessonId === 'all' || lessonId === '5-10') ? 20 : 12;
             grammarState.queue = shuffleArray(finalPool).slice(0, limit);
 
             if (grammarState.queue.length === 0) {
@@ -2573,7 +2761,7 @@
             });
 
             document.getElementById('grammar-lesson-badge').textContent =
-                lessonId === 'all' ? 'Tất cả bài (1 – 10)' : `Bài ${lessonId}`;
+                lessonId === 'all' ? 'Tất cả bài (1 – 10)' : (lessonId === '5-10' ? 'Tổng hợp Bài 5 – 10' : `Bài ${lessonId}`);
 
             showView('grammar-practice-view');
             renderCurrentGrammarExercise();
@@ -2583,7 +2771,6 @@
             const ex = grammarState.queue[grammarState.currentIndex];
             if (!ex) return;
 
-            // Khi CHƯA trả lời: chỉ đọc phần đề bài (giữ khoảng ngắt ở ô trống), không lộ đáp án
             if (!grammarState.answered) {
                 if (ex.type === 'order') {
                     const currentWords = grammarState.selectedOrder.length > 0
@@ -2597,7 +2784,6 @@
                 return;
             }
 
-            // Khi ĐÃ trả lời: đọc đầy đủ câu hoàn chỉnh kèm đáp án chuẩn
             if (ex.type === 'order') {
                 speakJapanese(ex.words.join(' '));
             } else if (ex.type === 'particle') {
@@ -2642,7 +2828,7 @@
 
             const typeLabels = {
                 particle: '問題Ⅰ Kéo thả trợ từ',
-                conjugation: '問題Ⅱ Chia từ & Vị trí',
+                conjugation: '問題Ⅱ Chia từ & Mẫu câu',
                 order: '問題Ⅲ Sắp xếp câu ★',
                 question: '問題Ⅳ Đặt câu hỏi',
                 reading: '問題Ⅴ Đọc hiểu ○/×'
@@ -2977,7 +3163,7 @@
             const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
 
             document.getElementById('grammar-result-subtitle').textContent =
-                grammarState.lessonId === 'all' ? 'Tất cả các bài (Bài 1 – Bài 10)' : `Bài ${grammarState.lessonId}`;
+                grammarState.lessonId === 'all' ? 'Tất cả các bài (Bài 1 – Bài 10)' : (grammarState.lessonId === '5-10' ? 'Tổng hợp Bài 5 – Bài 10' : `Bài ${grammarState.lessonId}`);
             document.getElementById('grammar-res-correct').textContent = `${correctCount} / ${total}`;
             document.getElementById('grammar-res-score').textContent = `${grammarState.score} đ`;
             document.getElementById('grammar-res-percent').textContent = `${percent}%`;
@@ -2995,7 +3181,7 @@
                 wrongListEl.innerHTML = grammarState.wrongList.map((item, idx) => `
                     <div class="bg-white rounded-2xl p-4 border border-rose-200 shadow-sm">
                         <div class="text-xs font-bold text-rose-600 mb-1">Câu sai #${idx + 1}</div>
-                        <div class="font-jp font-bold text-slate-900 mb-2">${addFurigana(item.ex.prompt)}</div>
+                        <div class="font-jp font-bold text-slate-900 mb-2">${addFurigana(item.ex.prompt || (item.ex.words || []).join(' '))}</div>
                         <div class="text-xs space-y-1">
                             <div class="text-rose-600">Bạn chọn: <span class="font-jp font-bold">${addFurigana(item.userAnswer)}</span></div>
                             <div class="text-emerald-700">Đáp án đúng: <span class="font-jp font-bold">${addFurigana(item.correctAnswer)}</span></div>
@@ -3026,12 +3212,15 @@
             const modal = document.getElementById('grammar-summary-modal');
             modal.classList.toggle('hidden');
             if (!modal.classList.contains('hidden')) {
-                const lessonIds = grammarState.lessonId === 'all'
-                    ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                    : [grammarState.lessonId];
+                let lessonIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                if (grammarState.lessonId === '5-10') {
+                    lessonIds = [5, 6, 7, 8, 9, 10];
+                } else if (grammarState.lessonId !== 'all') {
+                    lessonIds = [grammarState.lessonId];
+                }
 
                 document.getElementById('grammar-summary-title').textContent =
-                    grammarState.lessonId === 'all' ? 'Tóm tắt ngữ pháp Bài 1 – 10' : `Mẫu câu trọng tâm Bài ${grammarState.lessonId}`;
+                    grammarState.lessonId === 'all' ? 'Tóm tắt ngữ pháp Bài 1 – 10' : (grammarState.lessonId === '5-10' ? 'Tóm tắt ngữ pháp Bài 5 – 10' : `Mẫu câu trọng tâm Bài ${grammarState.lessonId}`);
 
                 document.getElementById('grammar-summary-body').innerHTML = lessonIds.map(id => {
                     const list = GRAMMAR_SUMMARIES[id] || [];
