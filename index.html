@@ -62,6 +62,9 @@
         body.hide-furigana ruby rt {
             display: none;
         }
+        body.hide-translation .vi-translation {
+            display: none;
+        }
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -376,6 +379,9 @@
                 ← Chọn bài
             </button>
             <div class="flex items-center gap-2">
+                <button id="trans-toggle-btn" onclick="toggleGrammarTranslation()" class="px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold cursor-pointer">
+                    🇻🇳 Dịch BẬT
+                </button>
                 <button id="hint-toggle-btn" onclick="toggleGrammarHint()" class="px-3 py-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold cursor-pointer">
                     💡 Gợi ý BẬT
                 </button>
@@ -1231,6 +1237,18 @@
             return text.replace(FURIGANA_REGEX, (match) => {
                 return `<ruby>${match}<rt>${FURIGANA_DICT[match]}</rt></ruby>`;
             });
+        }
+
+        function formatPromptWithTranslation(promptText) {
+            if (!promptText) return '';
+            // Tách phần dịch tiếng Việt nằm trong ngoặc đơn ở cuối câu hỏi để bật/tắt độc lập
+            const match = promptText.match(/^(.*?)(\s*\([A-Za-zÀ-ỹ0-9,\.\s\?\!\/\-]+\))\s*$/);
+            if (match) {
+                const jpPart = addFurigana(match[1]);
+                const viPart = `<span class="vi-translation text-base sm:text-lg font-semibold text-emerald-700 ml-1">${match[2].trim()}</span>`;
+                return `${jpPart} ${viPart}`;
+            }
+            return addFurigana(promptText);
         }
 
         /* =====================================================================
@@ -2439,10 +2457,23 @@
             expectedParticles: [],
             wrongList: [],
             furiganaOn: true,
-            hintOn: true
+            hintOn: true,
+            translationOn: true
         };
 
         const seenGrammarPrompts = new Set();
+
+        function toggleGrammarTranslation() {
+            grammarState.translationOn = !grammarState.translationOn;
+            document.body.classList.toggle('hide-translation', !grammarState.translationOn);
+            const btn = document.getElementById('trans-toggle-btn');
+            if (btn) {
+                btn.textContent = grammarState.translationOn ? '🇻🇳 Dịch BẬT' : '🇻🇳 Dịch TẮT';
+                btn.className = grammarState.translationOn
+                    ? 'px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold cursor-pointer'
+                    : 'px-3 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 text-xs font-bold cursor-pointer';
+            }
+        }
 
         function toggleGrammarHint() {
             grammarState.hintOn = !grammarState.hintOn;
@@ -2653,12 +2684,12 @@
                 renderGrammarParticleUI();
             } else if (ex.type === 'order') {
                 document.getElementById('grammar-instruction').textContent = 'Sắp xếp các thẻ từ thành câu hoàn chỉnh';
-                document.getElementById('grammar-prompt').innerHTML = addFurigana(ex.prompt || 'Hãy ghép các từ bên dưới thành câu đúng:');
+                document.getElementById('grammar-prompt').innerHTML = formatPromptWithTranslation(ex.prompt || 'Hãy ghép các từ bên dưới thành câu đúng:');
                 orderArea.classList.remove('hidden');
                 renderGrammarOrderUI(ex);
             } else {
                 document.getElementById('grammar-instruction').textContent = 'Chọn đáp án đúng nhất';
-                document.getElementById('grammar-prompt').innerHTML = addFurigana(ex.prompt);
+                document.getElementById('grammar-prompt').innerHTML = formatPromptWithTranslation(ex.prompt);
                 choicesArea.classList.remove('hidden');
                 const shuffledOpts = shuffleArray(ex.options);
                 choicesArea.innerHTML = shuffledOpts.map(opt => `
@@ -2674,7 +2705,7 @@
             if (!ex) return;
 
             let slotIdx = 0;
-            const promptHtml = addFurigana(ex.prompt).replace(/（　）/g, () => {
+            const promptHtml = formatPromptWithTranslation(ex.prompt).replace(/（　）/g, () => {
                 const i = slotIdx++;
                 const val = grammarState.particleSlots[i];
                 const isActive = !grammarState.answered && grammarState.activeParticleSlot === i;
